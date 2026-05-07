@@ -1,6 +1,6 @@
 YT.updateManager = {
   prepare: function (e) {
-    var odEl = ["#yt_subs_vs1", "#yt_subs_vs2", "#diff"];
+    var odEl = ["#yt_subs_vs1", "#yt_subs_vs2", "#yt_diff"];
     odEl.forEach(function (e) {
       new Odometer({
         el: document.querySelector(e),
@@ -25,7 +25,7 @@ YT.updateManager = {
   updateSubscribers: function (e, f) {
     $("#yt_subs_vs1").text(e);
     $("#yt_subs_vs2").text(f);
-    $("#diff").text(Math.abs(parseInt(e) - parseInt(f)));
+    $("#yt_diff").text(Math.abs(parseInt(e) - parseInt(f)));
     if (parseInt(e) - parseInt(f) > 0) {
       $(document.body).addClass("leading-left").removeClass("leading-right");
     } else {
