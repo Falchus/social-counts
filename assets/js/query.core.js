@@ -6,16 +6,16 @@ YT.query = {
     YT.live.stop();
     if (e.trim().substr(0, 2).toUpperCase() == "UC" && e.trim().length >= 24) {
       console.log(e);
-      $.getJSON("https://mixerno.space/api/youtube-channel-counter/user/" + encodeURIComponent(e), function (f) {
+      $.getJSON("https://backend.mixerno.space/api/youtube/estv3/" + encodeURIComponent(e), function (f) {
         if (!e) {
           alert("No results found!");
           location.href = baseURL;
           return;
         }
         YT.updateManager.updateChannelID(encodeURIComponent(e));
-        YT.updateManager.updateCover(f.user[2].count);
-        YT.updateManager.updateName(f.user[0].count);
-        YT.updateManager.updateProfile(f.user[1].count);
+        YT.updateManager.updateCover(f.items[0].brandingSettings.image);
+        YT.updateManager.updateName(f.items[0].snippet.title);
+        YT.updateManager.updateProfile(f.items[0].snippet.thumbnails.default.url);
         YT.urls.pushState(encodeURIComponent(e));
         YT.live.start();
       });
