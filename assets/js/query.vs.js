@@ -1,14 +1,14 @@
 YT.query = {
   begin: function () {
     $.getJSON(
-      "https://mixerno.space/api/youtube-channel-counter/user/" + encodeURIComponent(YT.live.vs1),
+      "https://backend.mixerno.space/api/youtube/estv3/" + encodeURIComponent(YT.live.vs1),
       function (f) {
         $.getJSON(
-          "https://mixerno.space/api/youtube-channel-counter/user/" + encodeURIComponent(YT.live.vs2),
+          "https://backend.mixerno.space/api/youtube/estv3/" + encodeURIComponent(YT.live.vs2),
           function (g) {
-            YT.updateManager.updateCover(f.user[2].count, g.user[2].count);
-            YT.updateManager.updateName(f.user[0].count, g.user[0].count);
-            YT.updateManager.updateProfile(f.user[1].count, g.user[1].count);
+            YT.updateManager.updateCover(f.items[0].brandingSettings.image, g.items[0].brandingSettings.image);
+            YT.updateManager.updateName(f.items[0].snippet.title, g.items[0].snippet.title);
+            YT.updateManager.updateProfile(f.items[0].snippet.thumbnails.default.url, g.items[0].snippet.thumbnails.default.url);
           },
         );
       },
