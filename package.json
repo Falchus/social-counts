@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/Falchus/youtube-realtime/issues"
   },
-  "homepage": "https://falchus.com/youtube-realtime/",
+  "homepage": "https://gh.falchus.com/youtube-realtime/",
   "dependencies": {
     "http-server": "^0.12.3"
   }
