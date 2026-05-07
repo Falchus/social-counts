@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akshatmittal/youtube-realtime.git"
+    "url": "git+https://github.com/Falchus/youtube-realtime.git"
   },
-  "author": "Akshat Mittal",
+  "author": "Falchus",
   "bugs": {
-    "url": "https://github.com/akshatmittal/youtube-realtime/issues"
+    "url": "https://github.com/Falchus/youtube-realtime/issues"
   },
-  "homepage": "https://akshatmittal.com/youtube-realtime/",
+  "homepage": "https://falchus.com/youtube-realtime/",
   "dependencies": {
     "http-server": "^0.12.3"
   }
