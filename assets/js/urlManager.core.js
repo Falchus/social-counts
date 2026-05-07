@@ -15,13 +15,6 @@ YT.urls = {
   },
   pushState: function (e) {
     history.pushState(null, null, "#!/" + e);
-    DISQUS.reset({
-      reload: true,
-      config: function () {
-        this.page.identifier = e;
-        this.page.url = baseURL + "#!/" + e;
-      },
-    });
     YT.query.newSearch(e);
   },
   getCurrent: function () {
