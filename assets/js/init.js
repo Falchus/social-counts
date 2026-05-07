@@ -11,7 +11,6 @@ function injectJs(e, id) {
 $(window).bind("popstate", YT.urls ? YT.urls.onchange : false);
 $(function () {
   YT.updateManager.prepare();
-  YT.sharing.bind();
   YT.multisearch.bind();
   YT.query.bind();
   YT.pins && YT.pins.getPins();
