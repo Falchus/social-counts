@@ -12,7 +12,6 @@ TT.query = {
           return;
         }
         TT.updateManager.updateChannelID(encodeURIComponent(e));
-        TT.updateManager.updateCover(f.user[2].count);
         TT.updateManager.updateName(f.user[0].count);
         TT.updateManager.updateProfile(f.user[1].count);
         TT.urls.pushState(encodeURIComponent(e));

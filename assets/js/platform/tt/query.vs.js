@@ -6,7 +6,6 @@ TT.query = {
         $.getJSON(
           "//mixerno.space/api/tiktok-user-counter/user/" + encodeURIComponent(TT.live.vs2),
           function (g) {
-          TT.updateManager.updateCover(f.user[2].count, g.user[2].count);
           TT.updateManager.updateName(f.user[0].count, g.user[0].count);
           TT.updateManager.updateProfile(f.user[1].count, g.user[1].count);
           },

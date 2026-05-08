@@ -11,7 +11,7 @@ TT.urls = {
       }
       TT.urls.pushState(q[0], q[1]);
     } else {
-      TT.urls.pushState("charlidamelio", "khaby.lame");
+      TT.urls.pushState("khaby.lame", "charlidamelio");
     }
   },
   pushState: function (e, f) {

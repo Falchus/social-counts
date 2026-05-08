@@ -18,10 +18,6 @@ TT.updateManager = {
     $("#tt_profile_vs1").attr("src", e);
     $("#tt_profile_vs2").attr("src", f);
   },
-  updateCover: function (e, f) {
-    $("#tt_cover_vs1").attr("src", e);
-    $("#tt_cover_vs2").attr("src", f);
-  },
   updateSubscribers: function (e, f) {
     $("#tt_subs_vs1").text(e);
     $("#tt_subs_vs2").text(f);
