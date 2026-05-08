@@ -145,7 +145,7 @@
       n.addEventListener("mouseleave", c.hide, !1));
   }
 
-  const s = s || {},
+  const s = {},
       u = document.querySelectorAll.bind(document);
   (s.displayEffect = function (e) {
     (e = e || {}),
