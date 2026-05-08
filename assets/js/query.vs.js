@@ -14,5 +14,5 @@ YT.query = {
       },
     );
   },
-  bind: function () {},
+  bind: function () {}
 };

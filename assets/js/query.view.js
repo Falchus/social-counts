@@ -1,8 +1,7 @@
 YT.query = {
   newSearch: function (e) {
-    if (e.trim() === YT.live.channelID || e.trim() === "") {
-      return;
-    }
+    if (e.trim() === YT.live.channelID || e.trim() === "") return;
+
     YT.live.stop();
     $.getJSON("//mixerno.space/api/youtube-video-counter/search/" + encodeURIComponent(e), function (e) {
       if (!e.list || e.list.length === 0) {
@@ -16,14 +15,5 @@ YT.query = {
       YT.urls.pushState(e.list[0][2]);
       YT.live.start();
     });
-  },
-  search: function (e) {
-    e.preventDefault();
-    YT.query.newSearch($("#yt_searchvalue").val());
-    $("#yt_searchvalue").val("");
-  },
-  bind: function () {
-    $("#yt_search").on("submit", this.search);
-    $("#yt_searchbutton").on("click", this.search);
-  },
+  }
 };
