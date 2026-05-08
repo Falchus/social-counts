@@ -1,14 +1,8 @@
 YT.urls = {
   onchange: function () {
     let q = location.hash.split("!/")[1];
-    let c;
     if (q) {
       q = q.split("$$");
-      if (q[0] > q[1]) {
-        c = q[0];
-        q[0] = q[1];
-        q[1] = c;
-      }
       YT.urls.pushState(q[0], q[1]);
     } else {
       YT.urls.pushState("UC-lHJZR3Gqxm24_Vd_AJ5Yw", "UCq-Fj5jknLsUf-MWSy4_brA");
