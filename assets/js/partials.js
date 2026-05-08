@@ -3,5 +3,6 @@ async function load(html) {
 }
 
 window.Head = { load: () => load('head') };
+window.Search_Top = { load: () => load('search.top') };
 window.Sidebar = { load: () => load('sidebar') };
 window.Footer = { load: () => load('footer') };
