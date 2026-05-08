@@ -47,7 +47,7 @@ YT.multisearch = {
   },
   launchCompare: function (e) {
     if (e === YT.live.channelID) return;
-    window.open("/youtube-realtime/compare/#!/" + YT.live.channelID + "$$" + e);
+    window.open("/social-counts/compare/#!/" + YT.live.channelID + "$$" + e);
     this.resetCompare();
   },
   bind: function () {

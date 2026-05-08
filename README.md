@@ -1,4 +1,4 @@
-# YouTube Realtime
+# Social Counts
 This is a simple experiment which shows the current live subscriber count on YouTube for a user. The count displayed on YouTube is often incorrect because it doesn't update in real time. The count used on this experiment is taken directly from the API and hence is guaranteed to be accurate.
 
 This page is super light and the follow up network requests are as minimal as possible.
