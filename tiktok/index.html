@@ -6,8 +6,8 @@
 <head>
     <script>Head.load()</script>
 
-    <link rel="canonical" href="https://gh.falchus.com/social-counts/view-count/" />
-    <meta property="og:url" content="https://gh.falchus.com/social-counts/view-count/" />
+    <link rel="canonical" href="https://gh.falchus.com/social-counts/tiktok" />
+    <meta property="og:url" content="https://gh.falchus.com/social-counts/tiktok" />
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
@@ -23,12 +23,12 @@
                             </a>
                         </li>
                     </ul>
-                    <form class="mx-2 my-auto d-inline w-100" id="yt_search">
+                    <form class="mx-2 my-auto d-inline w-100" id="tt_search">
                         <div class="input-group">
-                            <input type="text" class="form-control form-control" placeholder="Enter video URL or name.."
-                                id="yt_searchvalue" autocomplete="off">
+                            <input type="text" class="form-control form-control" placeholder="Search"
+                                id="tt_searchvalue" autocomplete="off">
                             <span class="input-group-btn">
-                                <button class="btn btn-success" type="button" id="yt_searchbutton">
+                                <button class="btn btn-success" type="button" id="tt_searchbutton">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
@@ -47,12 +47,12 @@
                                 <div>
                                     <h3 class="card-title text-center">Compare with?</h3>
                                 </div>
-                                <form class="mx-2 my-auto d-inline w-100" id="yt_search_m">
+                                <form class="mx-2 my-auto d-inline w-100" id="tt_search_m">
                                     <div class="input-group">
                                         <input type="text" class="form-control form-control" placeholder="Search"
-                                            id="yt_searchvalue_m" autocomplete="off">
+                                            id="tt_searchvalue_m" autocomplete="off">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-success" type="button" id="yt_searchbutton_m">
+                                            <button class="btn btn-success" type="button" id="tt_searchbutton_m">
                                                 <i class="fa fa-search"></i>
                                             </button>
                                         </span>
@@ -62,7 +62,7 @@
 
                                 </div>
                                 <div>
-                                    <button class="btn btn-danger w-100" id="yt_comrest">
+                                    <button class="btn btn-danger w-100" id="tt_comrest">
                                         <i class="fa fa-times"></i> Close
                                     </button>
                                 </div>
@@ -75,24 +75,21 @@
                 <div class="row">
                     <!-- Column -->
                     <div class="col-sm-12">
-                        <h3 class="m-t-20 m-b-0 text-center" style="font-size: 2em;">YouTube Live View Count</h3>
-                    </div>
-                    <div class="col-sm-12">
                         <div class="card m-b-0 m-t-20">
-                            <img class="card-img-top img-responsive" src="/social-counts/assets/images/banner.jpg" id="yt_cover"
-                                style="max-height:0;">
-                            <div class="card-block little-profile p-b-0 text-center views">
+                            <img class="card-img-top img-responsive" src="/social-counts/assets/images/banner.jpg" id="tt_cover"
+                                style="max-height:200px;">
+                            <div class="card-block little-profile p-b-0 text-center">
                                 <div class="pro-img">
-                                    <img src="/social-counts/assets/images/icon.png" alt="user" id="yt_profile">
+                                    <img src="/social-counts/assets/images/icon.png" alt="user" id="tt_profile">
                                 </div>
-                                <h3 class="display-6 m-b-15 m-t-10 text-center yt_name" id="yt_name">Falchus.com</h3>
+                                <h3 class="display-6 m-b-15 m-t-10 text-center tt_name" id="tt_name">Falchus.com</h3>
                             </div>
                             <div class="card-block text-center p-t-0">
                                 <div class="card-body">
                                     <div class="position-relative">
                                         <div class="white">
-                                            <h1 class="display-1 views" id="yt_views">00,000,000</h1>
-                                            <span>Views</span>
+                                            <h1 class="display-1" id="tt_subs">00,000,000</h1>
+                                            <span>Subscribers</span>
                                         </div>
                                     </div>
                                 </div>
@@ -110,44 +107,30 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12" id="yt_sharear2">
+                    <div class="col-sm-12" id="tt_sharear2">
                         <div class="row">
-                            <div class="col-12 col-lg-4">
+                            <div class="col-12 col-lg-7">
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
                                             <div class="position-relative">
                                                 <div class="mt-2 ml-2 white">
-                                                    <h1 class="display-5" id="yt_likes">000,000</h1>
-                                                    <span>Likes</span>
+                                                    <h1 class="display-5" id="tt_views">00,000,000,000</h1>
+                                                    <span>Views</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-4">
+                            <div class="col-12 col-lg-5">
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
                                             <div class="position-relative">
                                                 <div class="mt-2 ml-2 white">
-                                                    <h1 class="display-5" id="yt_dislikes">000,000</h1>
-                                                    <span>Dislikes</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-4">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <div class="card-body">
-                                            <div class="position-relative">
-                                                <div class="mt-2 ml-2 white">
-                                                    <h1 class="display-5" id="yt_comments">000,000</h1>
-                                                    <span>Comments</span>
+                                                    <h1 class="display-5" id="tt_videos">0,000</h1>
+                                                    <span>Videos</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -172,11 +155,11 @@
     <script src="/social-counts/assets/js/custom-ui.js"></script>
 
     <script src="/social-counts/assets/js/base.js"></script>
-    <script src="/social-counts/assets/js/platform/yt/updateManager.view.js"></script>
-    <script src="/social-counts/assets/js/platform/yt/query.view.js"></script>
-    <script src="/social-counts/assets/js/platform/yt/multisearch.view.js"></script>
-    <script src="/social-counts/assets/js/platform/yt/live.view.js"></script>
-    <script src="/social-counts/assets/js/platform/yt/urlManager.view.js"></script>
+    <script src="/social-counts/assets/js/platform/tt/updateManager.core.js"></script>
+    <script src="/social-counts/assets/js/platform/tt/query.core.js"></script>
+    <script src="/social-counts/assets/js/platform/tt/multisearch.core.js"></script>
+    <script src="/social-counts/assets/js/platform/tt/live.core.js"></script>
+    <script src="/social-counts/assets/js/platform/tt/urlManager.core.js"></script>
     <script src="/social-counts/assets/js/init.js"></script>
 </body>
 </html>
