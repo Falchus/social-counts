@@ -1,8 +1,7 @@
 YT.query = {
   newSearch: function (e) {
-    if (e.trim() === YT.live.channelID || e.trim() === "") {
-      return;
-    }
+    if (e.trim() === YT.live.channelID || e.trim() === "") return;
+
     YT.live.stop();
     if (e.trim().substr(0, 2).toUpperCase() === "UC" && e.trim().length >= 24) {
       console.log(e);
@@ -38,5 +37,5 @@ YT.query = {
   bind: function () {
     $("#yt_search").on("submit", this.search);
     $("#yt_searchbutton").on("click", this.search);
-  },
+  }
 };
