@@ -1,6 +1,6 @@
 TT.updateManager = {
   prepare: function () {
-    const odEl = ["#tt_subs", "#tt_views", "#tt_videos"];
+    const odEl = ["#tt_subs", "#tt_likes", "#tt_videos"];
     odEl.forEach(function (e) {
       new Odometer({
         el: document.querySelector(e),
@@ -19,8 +19,8 @@ TT.updateManager = {
   updateSubscribers: function (e) {
     $("#tt_subs").text(e);
   },
-  updateViews: function (e) {
-    $("#tt_views").text(e);
+  updateLikes: function (e) {
+    $("#tt_likes").text(e);
   },
   updateVideos: function (e) {
     $("#tt_videos").text(e);
