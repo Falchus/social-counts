@@ -1,10 +1,10 @@
 YT.urls = {
   onchange: function () {
-    var q = location.hash.split("!/")[1];
+    const q = location.hash.split("!/")[1];
     if (q) {
       YT.query.newSearch(location.hash.split("!/")[1]);
     } else {
-      var coolGuys = [
+      const coolGuys = [
         "UCX6OQ3DkcsbYNE6H8uQQuVA",
         "UCMiJRAwDNSNzuYeN2uWa0pA",
         "UC-lHJZR3Gqxm24_Vd_AJ5Yw"

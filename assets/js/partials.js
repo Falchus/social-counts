@@ -1,6 +1,6 @@
-async function load(url) {
-    document.currentScript.insertAdjacentHTML('afterend', await (await fetch(url)).text());
+async function load(html) {
+    document.currentScript.insertAdjacentHTML('afterend', await (await fetch('/youtube-realtime/assets/partials/' + html + '.html')).text());
 }
 
-window.Head = { load: () => load('/youtube-realtime/assets/partials/head.html') };
-window.Footer = { load: () => load('/youtube-realtime/assets/partials/footer.html') };
+window.Head = { load: () => load('head') };
+window.Footer = { load: () => load('footer') };

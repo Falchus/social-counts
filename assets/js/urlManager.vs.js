@@ -1,6 +1,7 @@
 YT.urls = {
   onchange: function () {
-    var q = location.hash.split("!/")[1];
+    let q = location.hash.split("!/")[1];
+    let c;
     if (q) {
       q = q.split("$$");
       if (q[0] > q[1]) {
@@ -14,6 +15,7 @@ YT.urls = {
     }
   },
   pushState: function (e, f) {
+    let c;
     if (e > f) {
       c = e;
       e = f;

@@ -1,8 +1,8 @@
 $(function () {
   "use strict";
-  var set = function () {
-    var width = window.innerWidth > 0 ? window.innerWidth : this.screen.width;
-    var topOffset = 70;
+  const set = function () {
+    const width = window.innerWidth > 0 ? window.innerWidth : this.screen.width;
+    const topOffset = 70;
     if (width < 1170) {
       $("body").addClass("mini-sidebar");
       $(".navbar-brand span").hide();
@@ -13,7 +13,7 @@ $(function () {
       $(".navbar-brand span").show();
     }
 
-    var height = (window.innerHeight > 0 ? window.innerHeight : this.screen.height) - 1;
+    let height = (window.innerHeight > 0 ? window.innerHeight : this.screen.height) - 1;
     height = height - topOffset;
     if (height < 1) height = 1;
     if (height > topOffset) {
