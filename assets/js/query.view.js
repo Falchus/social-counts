@@ -15,5 +15,14 @@ YT.query = {
       YT.urls.pushState(e.list[0][2]);
       YT.live.start();
     });
+  },
+  search: function (e) {
+    e.preventDefault();
+    YT.query.newSearch($("#yt_searchvalue").val());
+    $("#yt_searchvalue").val("");
+  },
+  bind: function () {
+    $("#yt_search").on("submit", this.search);
+    $("#yt_searchbutton").on("click", this.search);
   }
 };
