@@ -1,6 +1,6 @@
 YT.updateManager = {
   prepare: function () {
-    const odEl = ["#yt_subs", "#yt_views", "#yt_videos"];
+    const odEl = ["#subs", "#views", "#videos"];
     odEl.forEach(function (e) {
       new Odometer({
         el: document.querySelector(e),
@@ -11,22 +11,22 @@ YT.updateManager = {
     });
   },
   updateName: function (e) {
-    $(".yt_name").text(e);
+    $(".name").text(e);
   },
   updateProfile: function (e) {
-    $("#yt_profile").attr("src", e);
+    $("#profile").attr("src", e);
   },
   updateCover: function (e) {
-    $("#yt_cover").attr("src", e);
+    $("#cover").attr("src", e);
   },
   updateSubscribers: function (e) {
-    $("#yt_subs").text(e);
+    $("#subs").text(e);
   },
   updateViews: function (e) {
-    $("#yt_views").text(e);
+    $("#views").text(e);
   },
   updateVideos: function (e) {
-    $("#yt_videos").text(e);
+    $("#videos").text(e);
   },
   updateChannelID: function (e) {
     YT.live.channelID = e;

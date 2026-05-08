@@ -1,6 +1,6 @@
 TT.updateManager = {
   prepare: function () {
-    const odEl = ["#tt_subs_vs1", "#tt_subs_vs2", "#tt_diff"];
+    const odEl = ["#subs_vs1", "#subs_vs2", "#diff"];
     odEl.forEach(function (e) {
       new Odometer({
         el: document.querySelector(e),
@@ -15,13 +15,13 @@ TT.updateManager = {
     $(".vs2_name").text(f);
   },
   updateProfile: function (e, f) {
-    $("#tt_profile_vs1").attr("src", e);
-    $("#tt_profile_vs2").attr("src", f);
+    $("#profile_vs1").attr("src", e);
+    $("#profile_vs2").attr("src", f);
   },
   updateSubscribers: function (e, f) {
-    $("#tt_subs_vs1").text(e);
-    $("#tt_subs_vs2").text(f);
-    $("#tt_diff").text(Math.abs(parseInt(e) - parseInt(f)));
+    $("#subs_vs1").text(e);
+    $("#subs_vs2").text(f);
+    $("#diff").text(Math.abs(parseInt(e) - parseInt(f)));
     if (parseInt(e) - parseInt(f) > 0) {
       $(document.body).addClass("leading-left").removeClass("leading-right");
     } else {

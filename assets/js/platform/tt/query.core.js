@@ -19,11 +19,11 @@ TT.query = {
   },
   search: function (e) {
     e.preventDefault();
-    TT.query.newSearch($("#tt_searchvalue").val());
-    $("#tt_searchvalue").val("");
+    TT.query.newSearch($("#searchvalue").val());
+    $("#searchvalue").val("");
   },
   bind: function () {
-    $("#tt_search").on("submit", this.search);
-    $("#tt_searchbutton").on("click", this.search);
+    $("#search").on("submit", this.search);
+    $("#searchbutton").on("click", this.search);
   }
 };

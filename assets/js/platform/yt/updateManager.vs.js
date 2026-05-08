@@ -1,6 +1,6 @@
 YT.updateManager = {
   prepare: function () {
-    const odEl = ["#yt_subs_vs1", "#yt_subs_vs2", "#yt_diff"];
+    const odEl = ["#subs_vs1", "#subs_vs2", "#diff"];
     odEl.forEach(function (e) {
       new Odometer({
         el: document.querySelector(e),
@@ -15,17 +15,17 @@ YT.updateManager = {
     $(".vs2_name").text(f);
   },
   updateProfile: function (e, f) {
-    $("#yt_profile_vs1").attr("src", e);
-    $("#yt_profile_vs2").attr("src", f);
+    $("#profile_vs1").attr("src", e);
+    $("#profile_vs2").attr("src", f);
   },
   updateCover: function (e, f) {
-    $("#yt_cover_vs1").attr("src", e);
-    $("#yt_cover_vs2").attr("src", f);
+    $("#cover_vs1").attr("src", e);
+    $("#cover_vs2").attr("src", f);
   },
   updateSubscribers: function (e, f) {
-    $("#yt_subs_vs1").text(e);
-    $("#yt_subs_vs2").text(f);
-    $("#yt_diff").text(Math.abs(parseInt(e) - parseInt(f)));
+    $("#subs_vs1").text(e);
+    $("#subs_vs2").text(f);
+    $("#diff").text(Math.abs(parseInt(e) - parseInt(f)));
     if (parseInt(e) - parseInt(f) > 0) {
       $(document.body).addClass("leading-left").removeClass("leading-right");
     } else {

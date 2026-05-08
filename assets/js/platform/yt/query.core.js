@@ -31,11 +31,11 @@ YT.query = {
   },
   search: function (e) {
     e.preventDefault();
-    YT.query.newSearch($("#yt_searchvalue").val());
-    $("#yt_searchvalue").val("");
+    YT.query.newSearch($("#searchvalue").val());
+    $("#searchvalue").val("");
   },
   bind: function () {
-    $("#yt_search").on("submit", this.search);
-    $("#yt_searchbutton").on("click", this.search);
+    $("#search").on("submit", this.search);
+    $("#searchbutton").on("click", this.search);
   }
 };

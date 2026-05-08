@@ -38,12 +38,12 @@ TT.multisearch = {
   resetCompare: function () {
     $(".super-search").fadeOut("400", function () {
       $("#results").html("");
-      $("#tt_searchvalue_m").val("");
+      $("#searchvalue_m").val("");
     });
   },
   newSearch: function (e) {
     e.preventDefault();
-    TT.multisearch.getResults($("#tt_searchvalue_m").val());
+    TT.multisearch.getResults($("#searchvalue_m").val());
   },
   changeChannel: function (e) {
     if (TT.sharing.changing == null) return;
@@ -55,8 +55,8 @@ TT.multisearch = {
     this.resetCompare();
   },
   bind: function () {
-    $("#tt_comrest").on("click", this.resetCompare);
-    $("#tt_search_m").on("submit", this.newSearch);
-    $("#tt_searchbutton_m").on("click", this.newSearch);
+    $("#comrest").on("click", this.resetCompare);
+    $("#search_m").on("submit", this.newSearch);
+    $("#searchbutton_m").on("click", this.newSearch);
   },
 };

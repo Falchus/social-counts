@@ -38,12 +38,12 @@ YT.multisearch = {
   resetCompare: function () {
     $(".super-search").fadeOut("400", function () {
       $("#results").html("");
-      $("#yt_searchvalue_m").val("");
+      $("#searchvalue_m").val("");
     });
   },
   newSearch: function (e) {
     e.preventDefault();
-    YT.multisearch.getResults($("#yt_searchvalue_m").val());
+    YT.multisearch.getResults($("#searchvalue_m").val());
   },
   launchCompare: function (e) {
     if (e === YT.live.channelID) return;
@@ -51,8 +51,8 @@ YT.multisearch = {
     this.resetCompare();
   },
   bind: function () {
-    $("#yt_comrest").on("click", this.resetCompare);
-    $("#yt_search_m").on("submit", this.newSearch);
-    $("#yt_searchbutton_m").on("click", this.newSearch);
+    $("#comrest").on("click", this.resetCompare);
+    $("#search_m").on("submit", this.newSearch);
+    $("#searchbutton_m").on("click", this.newSearch);
   },
 };

@@ -1,6 +1,6 @@
 TT.updateManager = {
   prepare: function () {
-    const odEl = ["#tt_subs", "#tt_likes", "#tt_videos"];
+    const odEl = ["#subs", "#likes", "#videos"];
     odEl.forEach(function (e) {
       new Odometer({
         el: document.querySelector(e),
@@ -11,19 +11,19 @@ TT.updateManager = {
     });
   },
   updateName: function (e) {
-    $(".tt_name").text(e);
+    $(".name").text(e);
   },
   updateProfile: function (e) {
-    $("#tt_profile").attr("src", e);
+    $("#profile").attr("src", e);
   },
   updateSubscribers: function (e) {
-    $("#tt_subs").text(e);
+    $("#subs").text(e);
   },
   updateLikes: function (e) {
-    $("#tt_likes").text(e);
+    $("#likes").text(e);
   },
   updateVideos: function (e) {
-    $("#tt_videos").text(e);
+    $("#videos").text(e);
   },
   updateChannelID: function (e) {
     TT.live.channelID = e;
