@@ -1,6 +1,1 @@
-*.psd
-.htaccess
-_internal
-# Local Netlify folder
-.netlify
-node_modules
+.idea
