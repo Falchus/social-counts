@@ -1,5 +1,5 @@
 YT.updateManager = {
-  prepare: function (e) {
+  prepare: function () {
     var odEl = ["#yt_subs_vs1", "#yt_subs_vs2", "#yt_diff"];
     odEl.forEach(function (e) {
       new Odometer({

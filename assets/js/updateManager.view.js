@@ -1,5 +1,5 @@
 YT.updateManager = {
-  prepare: function (e) {
+  prepare: function () {
     var odEl = ["#yt_views", "#yt_likes", "#yt_dislikes", "#yt_comments"];
     odEl.forEach(function (e) {
       new Odometer({
@@ -33,16 +33,5 @@ YT.updateManager = {
   },
   updateChannelID: function (e) {
     YT.live.channelID = e;
-    $("#yt_shareurl").val(YT.urls.getCurrent());
-    $("#yt_embed_small").val(
-      '<iframe style="height:80px;width:300px;border:none;" frameborder="0" src="https://counts.live/embeds/youtube-view-count/' +
-        YT.live.channelID +
-        '/small" />',
-    );
-    $("#yt_embed_large").val(
-      '<iframe style="height:350px;width:320px;border:none;" frameborder="0" src="https://counts.live/embeds/youtube-view-count/' +
-        YT.live.channelID +
-        '/large" />',
-    );
   },
 };

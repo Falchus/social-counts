@@ -1,10 +1,10 @@
 YT.query = {
   newSearch: function (e) {
-    if (e.trim() == YT.live.channelID || e.trim() == "") {
+    if (e.trim() === YT.live.channelID || e.trim() === "") {
       return;
     }
     YT.live.stop();
-    $.getJSON("https://mixerno.space/api/youtube-video-counter/search/" + encodeURIComponent(e), function (e) {
+    $.getJSON("//mixerno.space/api/youtube-video-counter/search/" + encodeURIComponent(e), function (e) {
       if (!e.list || e.list.length === 0) {
         alert("No results found!");
         return;

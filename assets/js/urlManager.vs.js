@@ -2,7 +2,7 @@ YT.urls = {
   onchange: function () {
     var q = location.hash.split("!/")[1];
     if (q) {
-      var q = q.split("$$");
+      q = q.split("$$");
       if (q[0] > q[1]) {
         c = q[0];
         q[0] = q[1];
@@ -21,8 +21,5 @@ YT.urls = {
     }
     history.pushState(null, null, "#!/" + e + "$$" + f);
     YT.live.setVS(e, f);
-  },
-  getCurrent: function () {
-    return baseURL + "compare/#!/" + YT.live.vs1 + "$$" + YT.live.vs2;
-  },
+  }
 };

@@ -1,12 +1,12 @@
 YT.multisearch = {
   getResults: function (e) {
     $.getJSON(
-      "https://api.subscribercounter.nl/api/youtube-view-count/" + encodeURIComponent(e) + "/search",
+      "//api.subscribercounter.nl/api/youtube-view-count/" + encodeURIComponent(e) + "/search",
       function (e) {
         $er = $("#results");
         $er.html("");
         e.data.forEach(function (f) {
-          if (f.id == YT.live.channelID) return;
+          if (f.id === YT.live.channelID) return;
           $er.append(YT.multisearch.giveHtml(f.name, f.picture, f.id));
         });
       },
@@ -36,7 +36,7 @@ YT.multisearch = {
       });
   },
   resetCompare: function () {
-    $(".super-search,.dark-bg").fadeOut("400", function () {
+    $(".super-search").fadeOut("400", function () {
       $("#results").html("");
       $("#yt_searchvalue_m").val("");
     });
@@ -46,7 +46,7 @@ YT.multisearch = {
     YT.multisearch.getResults($("#yt_searchvalue_m").val());
   },
   launchCompare: function (e) {
-    if (e == YT.live.channelID) return;
+    if (e === YT.live.channelID) return;
     window.open("https://counts.live/compare/youtube-view-count/" + YT.live.channelID + "/youtube-view-count/" + e);
     this.resetCompare();
   },

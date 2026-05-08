@@ -11,8 +11,5 @@ YT.urls = {
   pushState: function (e) {
     history.pushState(null, null, "#!/" + e);
     YT.query.newSearch(e);
-  },
-  getCurrent: function () {
-    return baseURL + "live-view-count/#!/" + YT.live.channelID;
-  },
+  }
 };

@@ -1,12 +1,12 @@
 YT.multisearch = {
   getResults: function (e) {
     $.getJSON(
-      "https://api.subscribercounter.nl/api/youtube-subscriber-count/" + encodeURIComponent(e) + "/search",
+      "//api.subscribercounter.nl/api/youtube-subscriber-count/" + encodeURIComponent(e) + "/search",
       function (e) {
         $er = $("#results");
         $er.html("");
         e.data.forEach(function (f) {
-          if (f.id == YT.live.vs1 || f.id == YT.live.vs2) return;
+          if (f.id === YT.live.vs1 || f.id === YT.live.vs2) return;
           $er.append(YT.multisearch.giveHtml(f.name, f.picture, f.id));
         });
       },
@@ -36,7 +36,7 @@ YT.multisearch = {
       });
   },
   resetCompare: function () {
-    $(".super-search,.dark-bg").fadeOut("400", function () {
+    $(".super-search").fadeOut("400", function () {
       $("#results").html("");
       $("#yt_searchvalue_m").val("");
     });
@@ -47,7 +47,7 @@ YT.multisearch = {
   },
   changeChannel: function (e) {
     if (YT.sharing.changing == null) return;
-    if (YT.sharing.changing == "vs1") {
+    if (YT.sharing.changing === "vs1") {
       YT.urls.pushState(e, YT.live.vs2);
     } else {
       YT.urls.pushState(YT.live.vs1, e);

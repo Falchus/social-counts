@@ -1,8 +1,5 @@
 $(function () {
   "use strict";
-  $(function () {
-    $(".preloader").fadeOut();
-  });
   var set = function () {
     var width = window.innerWidth > 0 ? window.innerWidth : this.screen.width;
     var topOffset = 70;

@@ -1,31 +1,9 @@
-.preloader {
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  position: fixed;
-  z-index: 99999;
-  background: #fff;
-}
-
-.preloader .cssload-speeding-wheel {
-  position: absolute;
-  top: calc(50% - 3.5px);
-  left: calc(50% - 3.5px);
-}
-
 /*******************
 /*Top bar
 *******************/
 
 .topbar {
-  background: #f62d51;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #f62d51 0%, #660fb5 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #f62d51 0%, #660fb5 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #f62d51 0%, #660fb5 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .topbar .top-navbar .navbar-header .navbar-brand .dark-logo {

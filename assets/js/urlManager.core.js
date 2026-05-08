@@ -5,10 +5,9 @@ YT.urls = {
       YT.query.newSearch(location.hash.split("!/")[1]);
     } else {
       var coolGuys = [
-        "UCBJycsmduvYEL83R_U4JriQ",
-        "UCtinbF-Q-fVthA0qrFQTgXQ",
-        "UCp0hYYBW6IMayGgR-WeoCvQ",
-        "UCBJycsmduvYEL83R_U4JriQ",
+        "UCX6OQ3DkcsbYNE6H8uQQuVA",
+        "UCMiJRAwDNSNzuYeN2uWa0pA",
+        "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
       ];
       YT.query.newSearch(coolGuys[Math.floor(Math.random() * coolGuys.length)]);
     }
@@ -16,8 +15,5 @@ YT.urls = {
   pushState: function (e) {
     history.pushState(null, null, "#!/" + e);
     YT.query.newSearch(e);
-  },
-  getCurrent: function () {
-    return baseURL + "#!/" + YT.live.channelID;
-  },
+  }
 };
