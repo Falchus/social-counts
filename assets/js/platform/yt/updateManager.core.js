@@ -21,6 +21,7 @@ YT.updateManager = {
   },
   updateSubscribers: function (e) {
     $("#subs").text(e);
+    ChartManager.push(e);
   },
   updateViews: function (e) {
     $("#views").text(e);

@@ -18,6 +18,7 @@ TT.updateManager = {
   },
   updateSubscribers: function (e) {
     $("#subs").text(e);
+    ChartManager.push(e);
   },
   updateLikes: function (e) {
     $("#likes").text(e);
