@@ -24,7 +24,7 @@ YT.multisearch = {
   },
   launchCompare: function (e) {
     if (e === YT.live.channelID) return;
-    window.open("https://counts.live/compare/youtube-view-count/" + YT.live.channelID + "/youtube-view-count/" + e);
+    window.open("//counts.live/compare/youtube-view-count/" + YT.live.channelID + "/youtube-view-count/" + e);
     this.resetCompare();
   },
   bind: function () {
