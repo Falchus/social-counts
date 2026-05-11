@@ -4,15 +4,15 @@ TT.query = {
     TT.live.stop();
 
     console.log(e);
-    $.getJSON("https://tiktok-api.tokcounter.com/user/data/" + encodeURIComponent(e), function (f) {
+    $.getJSON("https://mixerno.space/api/tiktok-user-counter/user/" + encodeURIComponent(e), function (f) {
       if (!e) {
         alert("No results found!");
         location.href = baseURL;
         return;
       }
       TT.updateManager.updateChannelID(encodeURIComponent(e));
-      TT.updateManager.updateName(f.username);
-      TT.updateManager.updateProfile(f.avatar);
+      TT.updateManager.updateName(f.user[0].count);
+      TT.updateManager.updateProfile(f.user[1].count);
       TT.urls.pushState(encodeURIComponent(e));
       TT.live.start();
     });
