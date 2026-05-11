@@ -1,13 +1,13 @@
 TT.multisearch = {
   getResults: function (e) {
     $.getJSON(
-      "//mixerno.space/api/tiktok-user-counter/search/" + encodeURIComponent(e),
+      "//tiktok-api.tokcounter.com/user/search/" + encodeURIComponent(e),
       function (e) {
         let $er = $("#results");
         $er.html("");
         e.data.forEach(function (f) {
           if (f.id === TT.live.channelID) return;
-          $er.append(TT.multisearch.giveHtml(f.name, f.picture, f.id));
+          $er.append(TT.multisearch.giveHtml(f.username, f.avatar, f.id));
         });
       },
     );
