@@ -1,11 +1,11 @@
 YT.live = {
   channelID: "",
   update: function () {
-    $.getJSON("https://backend.mixerno.space/api/youtube/estv3/" + this.channelID, function (e) {
+    $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + this.channelID, function (e) {
       if (e) {
-        YT.updateManager.updateSubscribers(e.items[0].statistics.subscriberCount);
-        YT.updateManager.updateViews(e.items[0].statistics.viewCount);
-        YT.updateManager.updateVideos(e.items[0].statistics.videoCount);
+        YT.updateManager.updateSubscribers(e.statistics.subs);
+        YT.updateManager.updateViews(e.statistics.views);
+        YT.updateManager.updateVideos(e.statistics.videos);
       } else {
         YT.query.newSearch(YT.live.channelID);
       }

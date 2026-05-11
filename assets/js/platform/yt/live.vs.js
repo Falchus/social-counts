@@ -2,9 +2,9 @@ YT.live = {
   vs1: "",
   vs2: "",
   update: function () {
-    $.getJSON("https://backend.mixerno.space/api/youtube/estv3/" + YT.live.vs1, function (f) {
-      $.getJSON("https://backend.mixerno.space/api/youtube/estv3/" + YT.live.vs2, function (g) {
-        YT.updateManager.updateSubscribers(f.items[0].statistics.subscriberCount, g.items[0].statistics.subscriberCount);
+    $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + YT.live.vs1, function (f) {
+      $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + YT.live.vs2, function (g) {
+        YT.updateManager.updateSubscribers(f.statistics.subs, g.statistics.subs);
       });
     });
   },
