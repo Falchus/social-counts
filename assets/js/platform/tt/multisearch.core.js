@@ -1,7 +1,7 @@
 TT.multisearch = {
   getResults: function (e) {
     $.getJSON(
-      "//tiktok-api.tokcounter.com/user/search/" + encodeURIComponent(e),
+      "https://tiktok-api.tokcounter.com/user/search/" + encodeURIComponent(e),
       function (e) {
         let $er = $("#results");
         $er.html("");

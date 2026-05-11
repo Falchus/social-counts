@@ -1,7 +1,7 @@
 TT.live = {
   channelID: "",
   update: function () {
-    $.getJSON("//tiktok-api.tokcounter.com/user/data/" + this.channelID, function (e) {
+    $.getJSON("https://tiktok-api.tokcounter.com/user/data/" + this.channelID, function (e) {
       if (e) {
         TT.updateManager.updateSubscribers(e.stats.followers);
         TT.updateManager.updateLikes(e.stats.likes);

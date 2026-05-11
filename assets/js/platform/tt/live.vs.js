@@ -2,8 +2,8 @@ TT.live = {
   vs1: "",
   vs2: "",
   update: function () {
-    $.getJSON("//tiktok-api.tokcounter.com/user/data/" + TT.live.vs1, function (f) {
-      $.getJSON("//tiktok-api.tokcounter.com/user/data/" + TT.live.vs2, function (g) {
+    $.getJSON("https://tiktok-api.tokcounter.com/user/data/" + TT.live.vs1, function (f) {
+      $.getJSON("https://tiktok-api.tokcounter.com/user/data/" + TT.live.vs2, function (g) {
         TT.updateManager.updateSubscribers(f.stats.followers, g.stats.followers);
       });
     });

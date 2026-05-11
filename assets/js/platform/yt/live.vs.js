@@ -2,8 +2,8 @@ YT.live = {
   vs1: "",
   vs2: "",
   update: function () {
-    $.getJSON("//backend.mixerno.space/api/youtube/estv3/" + YT.live.vs1, function (f) {
-      $.getJSON("//backend.mixerno.space/api/youtube/estv3/" + YT.live.vs2, function (g) {
+    $.getJSON("https://backend.mixerno.space/api/youtube/estv3/" + YT.live.vs1, function (f) {
+      $.getJSON("https://backend.mixerno.space/api/youtube/estv3/" + YT.live.vs2, function (g) {
         YT.updateManager.updateSubscribers(f.items[0].statistics.subscriberCount, g.items[0].statistics.subscriberCount);
       });
     });

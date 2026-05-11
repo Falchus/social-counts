@@ -1,7 +1,7 @@
 YT.live = {
   channelID: "",
   update: function () {
-    $.getJSON("//backend.mixerno.space/api/youtube/estv3/" + this.channelID, function (e) {
+    $.getJSON("https://backend.mixerno.space/api/youtube/estv3/" + this.channelID, function (e) {
       if (e) {
         YT.updateManager.updateSubscribers(e.items[0].statistics.subscriberCount);
         YT.updateManager.updateViews(e.items[0].statistics.viewCount);

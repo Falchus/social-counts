@@ -1,7 +1,7 @@
 YT.live = {
   channelID: "",
   update: function () {
-    $.getJSON("//mixerno.space/api/youtube-video-counter/user/" + this.channelID, function (e) {
+    $.getJSON("https://mixerno.space/api/youtube-video-counter/user/" + this.channelID, function (e) {
       if (e) {
         YT.updateManager.updateViews(e.counts[2].count);
         YT.updateManager.updateLikes(e.counts[3].count);

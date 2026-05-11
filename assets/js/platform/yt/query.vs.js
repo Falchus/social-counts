@@ -1,10 +1,10 @@
 YT.query = {
   begin: function () {
     $.getJSON(
-      "//backend.mixerno.space/api/youtube/estv3/" + encodeURIComponent(YT.live.vs1),
+      "https://backend.mixerno.space/api/youtube/estv3/" + encodeURIComponent(YT.live.vs1),
       function (f) {
         $.getJSON(
-          "//backend.mixerno.space/api/youtube/estv3/" + encodeURIComponent(YT.live.vs2),
+          "https://backend.mixerno.space/api/youtube/estv3/" + encodeURIComponent(YT.live.vs2),
           function (g) {
             YT.updateManager.updateCover(f.items[0].brandingSettings.image, g.items[0].brandingSettings.image);
             YT.updateManager.updateName(f.items[0].snippet.title, g.items[0].snippet.title);

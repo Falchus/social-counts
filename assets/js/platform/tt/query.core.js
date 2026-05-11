@@ -4,7 +4,7 @@ TT.query = {
     TT.live.stop();
 
     console.log(e);
-    $.getJSON("//tiktok-api.tokcounter.com/user/data/" + encodeURIComponent(e), function (f) {
+    $.getJSON("https://tiktok-api.tokcounter.com/user/data/" + encodeURIComponent(e), function (f) {
       if (!e) {
         alert("No results found!");
         location.href = baseURL;

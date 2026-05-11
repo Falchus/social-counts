@@ -5,7 +5,7 @@ YT.query = {
     YT.live.stop();
     if (e.trim().substr(0, 2).toUpperCase() === "UC" && e.trim().length >= 24) {
       console.log(e);
-      $.getJSON("//backend.mixerno.space/api/youtube/estv3/" + encodeURIComponent(e), function (f) {
+      $.getJSON("https://backend.mixerno.space/api/youtube/estv3/" + encodeURIComponent(e), function (f) {
         if (!e) {
           alert("No results found!");
           location.href = baseURL;
@@ -19,7 +19,7 @@ YT.query = {
         YT.live.start();
       });
     } else {
-      $.getJSON("//mixerno.space/api/youtube-channel-counter/search/" + encodeURIComponent(e), function (e) {
+      $.getJSON("https://mixerno.space/api/youtube-channel-counter/search/" + encodeURIComponent(e), function (e) {
         if (!e) {
           alert("No results found!");
           location.href = baseURL;
