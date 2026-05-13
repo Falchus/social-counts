@@ -48,10 +48,6 @@ $(function () {
         chart.data.labels.push(new Date().toLocaleTimeString());
         chart.data.datasets[0].data.push(value - firstValue);
 
-        if (chart.data.labels.length > 30) {
-            chart.data.labels.shift();
-            chart.data.datasets[0].data.shift();
-        }
         chart.update();
     }
 
