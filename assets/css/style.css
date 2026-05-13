@@ -40,6 +40,10 @@ a:focus {
   display: inline-block;
 }
 
+.card-img-top {
+  aspect-ratio: 2560 / 424;
+}
+
 h1,
 h2,
 h3,
