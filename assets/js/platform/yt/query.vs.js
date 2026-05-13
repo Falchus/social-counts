@@ -1,14 +1,14 @@
 YT.query = {
   begin: function () {
     $.getJSON(
-      "https://backend.mixerno.space/api/youtube/estv3/" + encodeURIComponent(YT.live.vs1),
+      "https://apitest.falchus.com/social-counts/youtube/user/" + encodeURIComponent(YT.live.vs1),
       function (f) {
         $.getJSON(
-          "https://backend.mixerno.space/api/youtube/estv3/" + encodeURIComponent(YT.live.vs2),
+          "https://apitest.falchus.com/social-counts/youtube/user/" + encodeURIComponent(YT.live.vs2),
           function (g) {
-            YT.updateManager.updateCover(f.items[0].brandingSettings.image, g.items[0].brandingSettings.image);
-            YT.updateManager.updateName(f.items[0].snippet.title, g.items[0].snippet.title);
-            YT.updateManager.updateProfile(f.items[0].snippet.thumbnails.default.url, g.items[0].snippet.thumbnails.default.url);
+            YT.updateManager.updateCover(f.banner, g.banner);
+            YT.updateManager.updateName(f.name, g.name);
+            YT.updateManager.updateProfile(f.pfp, g.pfp);
           },
         );
       },
