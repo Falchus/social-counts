@@ -1,11 +1,11 @@
 TT.live = {
   channelID: "",
   update: function () {
-    $.getJSON("https://mixerno.space/api/tiktok-user-counter/user/" + this.channelID, function (e) {
+    $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.channelID, function (e) {
       if (e) {
-          TT.updateManager.updateSubscribers(e.counts[0].count);
-          TT.updateManager.updateLikes(e.counts[2].count);
-          TT.updateManager.updateVideos(e.counts[4].count);
+          TT.updateManager.updateSubscribers(e.statistics.subs);
+          TT.updateManager.updateLikes(e.statistics.likes);
+          TT.updateManager.updateVideos(e.statistics.videos);
       } else {
         TT.query.newSearch(TT.live.channelID);
       }

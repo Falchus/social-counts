@@ -4,15 +4,15 @@ TT.query = {
     TT.live.stop();
 
     console.log(e);
-    $.getJSON("https://mixerno.space/api/tiktok-user-counter/user/" + encodeURIComponent(e), function (f) {
+    $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + encodeURIComponent(e), function (f) {
       if (!e) {
         alert("No results found!");
         location.href = baseURL;
         return;
       }
       TT.updateManager.updateChannelID(encodeURIComponent(e));
-      TT.updateManager.updateName(f.user[0].count);
-      TT.updateManager.updateProfile(f.user[1].count);
+      TT.updateManager.updateName(f.name);
+      TT.updateManager.updateProfile(f.pfp);
       TT.urls.pushState(encodeURIComponent(e));
       TT.live.start();
     });

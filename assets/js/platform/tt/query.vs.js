@@ -1,13 +1,13 @@
 TT.query = {
   begin: function () {
     $.getJSON(
-      "https://mixerno.space/api/tiktok-user-counter/user/" + encodeURIComponent(TT.live.vs1),
+      "https://apitest.falchus.com/social-counts/tiktok/user/" + encodeURIComponent(TT.live.vs1),
       function (f) {
         $.getJSON(
-          "https://mixerno.space/api/tiktok-user-counter/user/" + encodeURIComponent(TT.live.vs2),
+          "https://apitest.falchus.com/social-counts/tiktok/user/" + encodeURIComponent(TT.live.vs2),
           function (g) {
-            TT.updateManager.updateName(f.user[0].count, g.user[0].count);
-            TT.updateManager.updateProfile(f.user[1].count, g.user[1].count);
+            TT.updateManager.updateName(f.name, g.name);
+            TT.updateManager.updateProfile(f.pfp, g.pfp);
           },
         );
       },

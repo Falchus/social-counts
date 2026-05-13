@@ -2,9 +2,9 @@ TT.live = {
   vs1: "",
   vs2: "",
   update: function () {
-    $.getJSON("https://mixerno.space/api/tiktok-user-counter/user/" + TT.live.vs1, function (f) {
-      $.getJSON("https://mixerno.space/api/tiktok-user-counter/user/" + TT.live.vs2, function (g) {
-        TT.updateManager.updateSubscribers(f.counts[0].count, g.counts[0].count);
+    $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + TT.live.vs1, function (f) {
+      $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + TT.live.vs2, function (g) {
+        TT.updateManager.updateSubscribers(f.statistics.subs, g.statistics.subs);
       });
     });
   },
