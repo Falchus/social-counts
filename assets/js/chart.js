@@ -22,11 +22,6 @@ $(function () {
                 }
             },
             plugins: {
-                decimation: {
-                    enabled: true,
-                    algorithm: "lttb",
-                    samples: canvas.clientWidth
-                },
                 legend: {
                     display: false
                 },
