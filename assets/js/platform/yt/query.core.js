@@ -7,7 +7,7 @@ YT.query = {
       $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + encodeURIComponent(e), function (f) {
         if (!e) {
           alert("No results found!");
-          location.href = baseURL;
+          location.href = url;
           return;
         }
         YT.updateManager.updateChannelID(encodeURIComponent(e));
@@ -21,16 +21,16 @@ YT.query = {
       $.getJSON("https://mixerno.space/api/youtube-channel-counter/search/" + encodeURIComponent(e), function (e) {
         if (!e) {
           alert("No results found!");
-          location.href = baseURL;
+          location.href = url;
           return;
         }
-        YT.query.newSearch(e.list[0][2]);
+        this.newSearch(e.list[0][2]);
       });
     }
   },
   search: function (e) {
     e.preventDefault();
-    YT.query.newSearch($("#searchvalue").val());
+    this.newSearch($("#searchvalue").val());
     $("#searchvalue").val("");
   },
   bind: function () {

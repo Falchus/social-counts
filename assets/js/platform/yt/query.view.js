@@ -18,7 +18,7 @@ YT.query = {
   },
   search: function (e) {
     e.preventDefault();
-    YT.query.newSearch($("#searchvalue").val());
+    this.newSearch($("#searchvalue").val());
     $("#searchvalue").val("");
   },
   bind: function () {

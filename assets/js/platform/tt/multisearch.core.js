@@ -7,7 +7,7 @@ TT.multisearch = {
         $er.html("");
         e.data.forEach(function (f) {
           if (f.id === TT.live.channelID) return;
-          $er.append(TT.multisearch.giveHtml(f.name, f.pfp, f.id));
+          $er.append(this.giveHtml(f.name, f.pfp, f.id));
         });
       },
     );
@@ -32,7 +32,7 @@ TT.multisearch = {
     })
       .append($g)
       .on("click", function () {
-        TT.multisearch.launchCompare(id);
+        this.launchCompare(id);
       });
   },
   resetCompare: function () {
@@ -43,7 +43,7 @@ TT.multisearch = {
   },
   newSearch: function (e) {
     e.preventDefault();
-    TT.multisearch.getResults($("#searchvalue_m").val());
+    this.getResults($("#searchvalue_m").val());
   },
   launchCompare: function (e) {
     if (e === TT.live.channelID) return;
@@ -54,5 +54,5 @@ TT.multisearch = {
     $("#comrest").on("click", this.resetCompare);
     $("#search_m").on("submit", this.newSearch);
     $("#searchbutton_m").on("click", this.newSearch);
-  },
+  }
 };

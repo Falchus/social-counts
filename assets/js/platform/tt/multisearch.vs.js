@@ -7,7 +7,7 @@ TT.multisearch = {
         $er.html("");
         e.data.forEach(function (f) {
           if (f.id === TT.live.vs1 || f.id === TT.live.vs2) return;
-          $er.append(TT.multisearch.giveHtml(f.name, f.pfp, f.id));
+          $er.append(this.giveHtml(f.name, f.pfp, f.id));
         });
       },
     );
@@ -32,7 +32,7 @@ TT.multisearch = {
     })
       .append($g)
       .on("click", function () {
-        TT.multisearch.changeChannel(id);
+        this.changeChannel(id);
       });
   },
   resetCompare: function () {
@@ -43,7 +43,7 @@ TT.multisearch = {
   },
   newSearch: function (e) {
     e.preventDefault();
-    TT.multisearch.getResults($("#searchvalue_m").val());
+    this.getResults($("#searchvalue_m").val());
   },
   changeChannel: function (e) {
     if (TT.sharing.changing == null) return;
@@ -58,5 +58,5 @@ TT.multisearch = {
     $("#comrest").on("click", this.resetCompare);
     $("#search_m").on("submit", this.newSearch);
     $("#searchbutton_m").on("click", this.newSearch);
-  },
+  }
 };

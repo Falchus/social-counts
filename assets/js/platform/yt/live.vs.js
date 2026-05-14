@@ -2,8 +2,8 @@ YT.live = {
   vs1: "",
   vs2: "",
   update: function () {
-    $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + YT.live.vs1, function (f) {
-      $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + YT.live.vs2, function (g) {
+    $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + this.vs1, function (f) {
+      $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + this.vs2, function (g) {
         YT.updateManager.updateSubscribers(f.statistics.subs, g.statistics.subs);
       });
     });
@@ -17,12 +17,12 @@ YT.live = {
   start: function () {
     this.stop();
     YT.query.begin();
-    this.timer = setInterval(function () {
-      YT.live.update();
-    }, 10000);
-    YT.live.update();
+    this.timer = setInterval(() => {
+      this.update();
+    }, 2000);
+    this.update();
   },
   stop: function () {
     clearInterval(this.timer);
-  },
+  }
 };

@@ -2,8 +2,8 @@ TT.live = {
   vs1: "",
   vs2: "",
   update: function () {
-    $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + TT.live.vs1, function (f) {
-      $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + TT.live.vs2, function (g) {
+    $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.vs1, function (f) {
+      $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.vs2, function (g) {
         TT.updateManager.updateSubscribers(f.statistics.subs, g.statistics.subs);
       });
     });
@@ -17,12 +17,12 @@ TT.live = {
   start: function () {
     this.stop();
     TT.query.begin();
-    this.timer = setInterval(function () {
-      TT.live.update();
-    }, 10000);
-    TT.live.update();
+    this.timer = setInterval(() => {
+      this.update();
+    }, 2000);
+    this.update();
   },
   stop: function () {
     clearInterval(this.timer);
-  },
+  }
 };

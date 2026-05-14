@@ -31,5 +31,5 @@ YT.updateManager = {
     } else {
       $(document.body).addClass("leading-right").removeClass("leading-left");
     }
-  },
+  }
 };

@@ -34,5 +34,5 @@ YT.updateManager = {
   },
   updateChannelID: function (e) {
     YT.live.channelID = e;
-  },
+  }
 };

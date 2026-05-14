@@ -3,9 +3,9 @@ YT.urls = {
     let q = location.hash.split("!/")[1];
     if (q) {
       q = q.split("$$");
-      YT.urls.pushState(q[0], q[1]);
+      this.pushState(q[0], q[1]);
     } else {
-      YT.urls.pushState("UC-lHJZR3Gqxm24_Vd_AJ5Yw", "UCq-Fj5jknLsUf-MWSy4_brA");
+      this.pushState("UC-lHJZR3Gqxm24_Vd_AJ5Yw", "UCq-Fj5jknLsUf-MWSy4_brA");
     }
   },
   pushState: function (e, f) {

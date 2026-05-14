@@ -6,7 +6,7 @@ TT.query = {
     $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + encodeURIComponent(e), function (f) {
       if (!e) {
         alert("No results found!");
-        location.href = baseURL;
+        location.href = url;
         return;
       }
       TT.updateManager.updateChannelID(encodeURIComponent(e));
@@ -18,7 +18,7 @@ TT.query = {
   },
   search: function (e) {
     e.preventDefault();
-    TT.query.newSearch($("#searchvalue").val());
+    this.newSearch($("#searchvalue").val());
     $("#searchvalue").val("");
   },
   bind: function () {

@@ -1,5 +1,4 @@
-const baseURL = "https://gh.falchus.com/social-counts/";
-if (typeof isCustomPage == "undefined") isCustomPage = 0;
+const url = "https://gh.falchus.com/social-counts/";
 
 const YT = {};
 const TT = {};
