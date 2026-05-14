@@ -7,13 +7,19 @@ $(function () {
         data: {
             labels: [],
             datasets: [{
-                data: [],
+                data: []
             }]
         },
         options: {
             animation: false,
             pointRadius: 0,
             pointHoverRadius: 0,
+            elements: {
+                line: {
+                    fill: false,
+                    tension: 0
+                }
+            },
             plugins: {
                 legend: {
                     display: false
@@ -35,20 +41,23 @@ $(function () {
     });
 
     let firstValue;
+    let pending = false;
 
     function push(value) {
         if (firstValue === undefined) {
             firstValue = value;
-            chart.data.labels.push("");
-            chart.data.datasets[0].data.push(0);
-            chart.update();
-            return;
         }
 
-        chart.data.labels.push(new Date().toLocaleTimeString());
+        chart.data.labels.push("");
         chart.data.datasets[0].data.push(value - firstValue);
 
-        chart.update();
+        if (!pending) {
+            pending = true;
+            requestAnimationFrame(() => {
+                chart.update("none");
+                pending = false;
+            })
+        }
     }
 
     window.ChartManager = {
