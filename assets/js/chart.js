@@ -5,13 +5,14 @@ $(function () {
     const chart = new Chart(canvas, {
         type: "line",
         data: {
-            labels: [],
             datasets: [{
                 data: []
             }]
         },
         options: {
             animation: false,
+            parsing: false,
+            normalized: true,
             pointRadius: 0,
             pointHoverRadius: 0,
             elements: {
@@ -21,6 +22,11 @@ $(function () {
                 }
             },
             plugins: {
+                decimation: {
+                    enabled: true,
+                    algorithm: "lttb",
+                    samples: canvas.clientWidth
+                },
                 legend: {
                     display: false
                 },
@@ -30,6 +36,7 @@ $(function () {
             },
             scales: {
                 x: {
+                    type: "linear",
                     display: false
                 },
                 y: {
@@ -40,6 +47,7 @@ $(function () {
         }
     });
 
+    let x = 0;
     let firstValue;
     let pending = false;
 
@@ -48,8 +56,15 @@ $(function () {
             firstValue = value;
         }
 
-        chart.data.labels.push("");
-        chart.data.datasets[0].data.push(value - firstValue);
+        const data = chart.data.datasets[0].data;
+        data.push({
+            x: x++,
+            y: value - firstValue
+        });
+        if (data.length >= canvas.clientWidth) {
+            data.length = 0;
+            firstValue = undefined;
+        }
 
         if (!pending) {
             pending = true;
