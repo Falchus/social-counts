@@ -19,7 +19,7 @@ TT.live = {
     TT.query.begin();
     this.timer = setInterval(() => {
       this.update();
-    }, 2000);
+    }, 10000);
     this.update();
   },
   stop: function () {
