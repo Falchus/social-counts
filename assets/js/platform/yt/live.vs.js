@@ -4,11 +4,15 @@ YT.live = {
   update: function () {
     $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + this.vs1, f => {
       $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + this.vs2, g => {
+        YT.query.begin();
         YT.updateManager.updateSubscribers(f.statistics.subs, g.statistics.subs);
+
+        this.nextUpdate = Math.max(f.update.next, g.update.next);
       });
     });
   },
   timer: null,
+  nextUpdate: 0,
   setVS: function (e, f) {
     this.vs1 = e;
     this.vs2 = f;
@@ -16,13 +20,12 @@ YT.live = {
   },
   start: function () {
     this.stop();
-    YT.query.begin();
-    this.timer = setInterval(() => {
-      this.update();
-    }, 2000);
     this.update();
+    this.timer = setTimeout(() => {
+      this.start();
+    }, this.nextUpdate || 2000);
   },
   stop: function () {
-    clearInterval(this.timer);
+    clearTimeout(this.timer);
   }
 };

@@ -9,17 +9,20 @@ YT.live = {
       YT.updateManager.updateSubscribers(e.statistics.subs);
       YT.updateManager.updateViews(e.statistics.views);
       YT.updateManager.updateVideos(e.statistics.videos);
+
+      this.nextUpdate = e.update.next;
     });
   },
   timer: null,
+  nextUpdate: 0,
   start: function () {
     this.stop();
-    this.timer = setInterval(() => {
-      this.update();
-    }, 2000);
     this.update();
+    this.timer = setTimeout(() => {
+      this.start();
+    }, this.nextUpdate || 2000);
   },
   stop: function () {
-    clearInterval(this.timer);
+    clearTimeout(this.timer);
   }
 };
