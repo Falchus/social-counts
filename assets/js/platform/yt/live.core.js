@@ -2,13 +2,13 @@ YT.live = {
   channelID: "",
   update: function () {
     $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + this.channelID, e => {
-      if (e) {
-        YT.updateManager.updateSubscribers(e.statistics.subs);
-        YT.updateManager.updateViews(e.statistics.views);
-        YT.updateManager.updateVideos(e.statistics.videos);
-      } else {
+      if (!e) {
         YT.query.newSearch(this.channelID);
+        return;
       }
+      YT.updateManager.updateSubscribers(e.statistics.subs);
+      YT.updateManager.updateViews(e.statistics.views);
+      YT.updateManager.updateVideos(e.statistics.videos);
     });
   },
   timer: null,

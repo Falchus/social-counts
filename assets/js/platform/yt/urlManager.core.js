@@ -2,7 +2,7 @@ YT.urls = {
   onchange: function () {
     const q = location.hash.split("!/")[1];
     if (q) {
-      YT.query.newSearch(location.hash.split("!/")[1]);
+      YT.query.newSearch(q);
     } else {
       const coolGuys = [
         "UCX6OQ3DkcsbYNE6H8uQQuVA",

@@ -2,7 +2,7 @@ TT.urls = {
   onchange: function () {
     const q = location.hash.split("!/")[1];
     if (q) {
-      TT.query.newSearch(location.hash.split("!/")[1]);
+      TT.query.newSearch(q);
     } else {
       const coolGuys = [
         "mrbeast",

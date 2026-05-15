@@ -1,7 +1,6 @@
 YT.updateManager = {
   prepare: function () {
-    const odEl = ["#views", "#likes", "#dislikes", "#comments"];
-    odEl.forEach(function (e) {
+    ["#views", "#likes", "#dislikes", "#comments"].forEach(function (e) {
       new Odometer({
         el: document.querySelector(e),
         value: "0",

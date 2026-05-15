@@ -4,7 +4,7 @@ YT.query = {
 
     YT.live.stop();
     if (e.trim().substr(0, 2).toUpperCase() === "UC" && e.trim().length >= 24) {
-      $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + encodeURIComponent(e), function (f) {
+      $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + encodeURIComponent(e), f => {
         if (!e) {
           alert("No results found!");
           location.href = url;
@@ -18,7 +18,7 @@ YT.query = {
         YT.live.start();
       });
     } else {
-      $.getJSON("https://mixerno.space/api/youtube-channel-counter/search/" + encodeURIComponent(e), function (e) {
+      $.getJSON("https://mixerno.space/api/youtube-channel-counter/search/" + encodeURIComponent(e), e => {
         if (!e) {
           alert("No results found!");
           location.href = url;
