@@ -16,7 +16,7 @@ TT.live = {
     this.stop();
     this.timer = setInterval(() => {
       this.update();
-    }, 2000);
+    }, 10000);
     this.update();
   },
   stop: function () {
