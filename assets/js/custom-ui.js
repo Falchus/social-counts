@@ -34,9 +34,9 @@ $(function () {
     e.preventDefault();
     $("html, body").animate(
       {
-        scrollTop: $(this.hash).offset().top - 90,
+        scrollTop: $(this.hash).offset().top - 90
       },
-      300,
+      300
     );
   });
 

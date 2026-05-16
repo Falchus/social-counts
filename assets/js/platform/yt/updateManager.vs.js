@@ -5,7 +5,7 @@ YT.updateManager = {
         el: document.querySelector(e),
         value: "0",
         format: "(,ddd)",
-        theme: "minimal",
+        theme: "minimal"
       });
     });
   },

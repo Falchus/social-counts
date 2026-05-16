@@ -14,20 +14,22 @@ TT.multisearch = {
   giveHtml: function (name, image, id) {
     let $e = $("<div>", {
       class: "round align-self-center",
-      style: "background: url('" + image + "');background-size:cover;",
+      style:
+          "background: url('" + image + "');" +
+          "background-size: cover;"
     });
     let $ee = $("<h3>", {
-      class: "m-b-0 font-light",
+      class: "m-b-0 font-light"
     }).text(name);
     let $f = $("<div>", {
-      class: "m-l-10 align-self-center",
+      class: "m-l-10 align-self-center"
     }).append($ee);
     let $g = $("<div>", {
-      class: "d-flex flex-row",
+      class: "d-flex flex-row"
     });
-    $g.append($e).append($f);
+    $g.append($e, $f);
     return $("<div>", {
-      class: "card-block card m-b-15",
+      class: "card-block card m-b-15"
     })
       .append($g)
       .on("click", function () {
