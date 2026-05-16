@@ -1,7 +1,7 @@
 TT.live = {
   channelID: "",
   update: function () {
-    $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.channelID, e => {
+    $.getJSON("https://socialcounts-api.falchus.com/tiktok/user/" + this.channelID, e => {
       if (!e) {
         TT.query.newSearch(this.channelID);
         return;

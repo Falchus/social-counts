@@ -3,7 +3,7 @@ TT.query = {
     if (e.trim() === TT.live.channelID || e.trim() === "") return;
     TT.live.stop();
 
-    $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + encodeURIComponent(e), f => {
+    $.getJSON("https://socialcounts-api.falchus.com/tiktok/user/" + encodeURIComponent(e), f => {
       if (!e) {
         alert("No results found!");
         location.href = url;

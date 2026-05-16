@@ -1,7 +1,7 @@
 TT.multisearch = {
   getResults: function (e) {
     $.getJSON(
-      "https://apitest.falchus.com/social-counts/tiktok/user/" + encodeURIComponent(e), e => {
+      "https://socialcounts-api.falchus.com/tiktok/user/" + encodeURIComponent(e), e => {
         let $er = $("#results");
         $er.html("");
         e.data.forEach(function (f) {

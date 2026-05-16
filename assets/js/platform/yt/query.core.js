@@ -4,7 +4,7 @@ YT.query = {
 
     YT.live.stop();
     if (e.trim().substr(0, 2).toUpperCase() === "UC" && e.trim().length >= 24) {
-      $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + encodeURIComponent(e), f => {
+      $.getJSON("https://socialcounts-api.falchus.com/youtube/user/" + encodeURIComponent(e), f => {
         if (!e) {
           alert("No results found!");
           location.href = url;

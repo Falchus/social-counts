@@ -3,8 +3,8 @@ YT.live = {
   vs2: "",
   update: function () {
     $.when(
-        $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + this.vs1),
-        $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + this.vs2)
+        $.getJSON("https://socialcounts-api.falchus.com/youtube/user/" + this.vs1),
+        $.getJSON("https://socialcounts-api.falchus.com/youtube/user/" + this.vs2)
     ).done(([f], [g]) => {
       YT.query.begin(f, g);
       YT.updateManager.updateSubscribers(f.statistics.subs, g.statistics.subs);

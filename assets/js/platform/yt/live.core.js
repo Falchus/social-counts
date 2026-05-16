@@ -1,7 +1,7 @@
 YT.live = {
   channelID: "",
   update: function () {
-    $.getJSON("https://apitest.falchus.com/social-counts/youtube/user/" + this.channelID, e => {
+    $.getJSON("https://socialcounts-api.falchus.com/youtube/user/" + this.channelID, e => {
       if (!e) {
         YT.query.newSearch(this.channelID);
         return;
