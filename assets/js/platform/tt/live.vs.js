@@ -2,13 +2,14 @@ TT.live = {
   vs1: "",
   vs2: "",
   update: function () {
-    $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.vs1, f => {
-      $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.vs2, g => {
-        TT.query.begin();
-        TT.updateManager.updateSubscribers(f.statistics.subs, g.statistics.subs);
+    $.when(
+      $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.vs1),
+      $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.vs2)
+    ).done(([f], [g]) => {
+      TT.query.begin();
+      TT.updateManager.updateSubscribers(f.statistics.subs, g.statistics.subs);
 
-        this.nextUpdate = Math.max(f.update.next, g.update.next);
-      });
+      this.nextUpdate = Math.max(f.update.next, g.update.next);
     });
   },
   timer: null,
