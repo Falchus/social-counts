@@ -22,7 +22,9 @@ YT.query = {
     $("#searchvalue").val("");
   },
   bind: function () {
-    $("#search").on("submit", this.search);
-    $("#searchbutton").on("click", this.search);
+    const search = this.search.bind(this);
+
+    $("#search").on("submit", search);
+    $("#searchbutton").on("click", search);
   }
 };

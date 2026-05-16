@@ -54,8 +54,10 @@ YT.multisearch = {
     this.resetCompare();
   },
   bind: function () {
-    $("#comrest").on("click", this.resetCompare);
-    $("#search_m").on("submit", this.newSearch);
-    $("#searchbutton_m").on("click", this.newSearch);
+    const newSearch = this.newSearch.bind(this);
+
+    $("#comrest").on("click", this.resetCompare.bind(this));
+    $("#search_m").on("submit", newSearch);
+    $("#searchbutton_m").on("click", newSearch);
   }
 };
