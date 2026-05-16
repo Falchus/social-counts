@@ -375,6 +375,13 @@ footer {
   right: 0;
   border-top: 1px solid rgba(120, 130, 140, 0.13);
   background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer > div:last-child {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .card {
