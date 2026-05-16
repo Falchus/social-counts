@@ -366,7 +366,7 @@ textarea {
   text-align: center;
 }
 
-.footer {
+footer {
   bottom: 0;
   color: #67757c;
   left: 0;
@@ -740,7 +740,7 @@ sidebar navigation
     margin-left: 240px;
   }
 
-  .footer {
+  footer {
     left: 240px;
   }
 }
@@ -751,7 +751,7 @@ sidebar navigation
     transition: 0.2s ease-in;
   }
 
-  .footer {
+  footer {
     left: 60px;
   }
 }
@@ -770,7 +770,7 @@ sidebar navigation
     margin-left: 60px;
   }
 
-  .mini-sidebar .footer {
+  .mini-sidebar footer {
     left: 60px;
   }
 }
@@ -862,7 +862,7 @@ sidebar navigation
     padding-top: 70px;
   }
 
-  .footer {
+  footer {
     left: 0;
   }
 
