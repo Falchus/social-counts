@@ -3,10 +3,10 @@ TT.live = {
   vs2: "",
   update: function () {
     $.when(
-      $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.vs1),
-      $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.vs2)
+        $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.vs1),
+        $.getJSON("https://apitest.falchus.com/social-counts/tiktok/user/" + this.vs2)
     ).done(([f], [g]) => {
-      TT.query.begin();
+      TT.query.begin(f, g);
       TT.updateManager.updateSubscribers(f.statistics.subs, g.statistics.subs);
 
       this.nextUpdate = Math.max(f.update.next, g.update.next);
