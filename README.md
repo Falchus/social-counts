@@ -9,6 +9,10 @@ A simple website which shows the realtime statistics on social media for a user.
 - Easy user selection
 - Immersive UI
 
+# Supported Platforms
+- YouTube
+- TikTok
+
 # License
 © 2019 [Akshat Mittal](https://akshatmittal.com) - © 2026 [Falchus.com](https://falchus.com)
 
