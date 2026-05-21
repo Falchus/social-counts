@@ -6,7 +6,7 @@ TT.multisearch = {
         $er.html("");
         e.data.forEach(function (f) {
           if (f.id === TT.live.vs1 || f.id === TT.live.vs2) return;
-          $er.append(this.giveHtml(f.name, f.pfp, f.id));
+          $er.append(this.giveHtml(f.name, f.picture, f.id));
         });
       },
     );

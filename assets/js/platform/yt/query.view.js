@@ -3,16 +3,16 @@ YT.query = {
     if (e.trim() === YT.live.channelID || e.trim() === "") return;
 
     YT.live.stop();
-    $.getJSON("https://mixerno.space/api/youtube-video-counter/search/" + encodeURIComponent(e), e => {
-      if (!e.list || e.list.length === 0) {
+    $.getJSON("https://socialcounts-api.falchus.com/youtube/video/" + encodeURIComponent(e), e => {
+      if (!e) {
         alert("No results found!");
         return;
       }
-      YT.updateManager.updateChannelID(e.list[0][2]);
-      YT.updateManager.updateCover(e.list[0][1]);
-      YT.updateManager.updateName(e.list[0][0]);
-      YT.updateManager.updateProfile(e.list[0][1]);
-      YT.urls.pushState(e.list[0][2]);
+      YT.updateManager.updateChannelID(e.id);
+      YT.updateManager.updateCover(e.picture);
+      YT.updateManager.updateName(e.name);
+      YT.updateManager.updateProfile(e.picture);
+      YT.urls.pushState(e.id);
       YT.live.start();
     });
   },

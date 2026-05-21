@@ -1,15 +1,15 @@
 YT.live = {
   channelID: "",
   update: function () {
-    $.getJSON("https://mixerno.space/api/youtube-video-counter/user/" + this.channelID, e => {
+    $.getJSON("https://socialcounts-api.falchus.com/youtube/video/" + this.channelID, e => {
       if (!e) {
         YT.query.newSearch(this.channelID);
         return;
       }
-      YT.updateManager.updateViews(e.counts[2].count);
-      YT.updateManager.updateLikes(e.counts[3].count);
-      YT.updateManager.updateDislikes(e.counts[4].count);
-      YT.updateManager.updateComments(e.counts[5].count);
+      YT.updateManager.updateViews(e.statistics.views);
+      YT.updateManager.updateLikes(e.statistics.likes);
+      YT.updateManager.updateDislikes(e.statistics.dislikes);
+      YT.updateManager.updateComments(e.statistics.comments);
     });
   },
   timer: null,

@@ -11,7 +11,7 @@ TT.query = {
       }
       TT.updateManager.updateChannelID(encodeURIComponent(e));
       TT.updateManager.updateName(f.name);
-      TT.updateManager.updateProfile(f.pfp);
+      TT.updateManager.updateProfile(f.picture);
       TT.urls.pushState(encodeURIComponent(e));
       TT.live.start();
     });
