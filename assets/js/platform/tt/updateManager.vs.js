@@ -1,6 +1,6 @@
 TT.updateManager = {
   prepare: function () {
-    ["#subs_vs1", "#subs_vs2", "#diff"].forEach(function (e) {
+    ["#subs_vs1", "#subs_vs2", "#diff"].forEach(e => {
       new Odometer({
         el: document.querySelector(e),
         value: "0",

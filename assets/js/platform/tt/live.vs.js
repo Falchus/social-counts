@@ -3,8 +3,8 @@ TT.live = {
   vs2: "",
   update: function () {
     $.when(
-        $.getJSON("https://socialcounts-api.falchus.com/tiktok/user/" + this.vs1),
-        $.getJSON("https://socialcounts-api.falchus.com/tiktok/user/" + this.vs2)
+      $.getJSON("https://socialcounts-api.falchus.com/tiktok/user/" + this.vs1),
+      $.getJSON("https://socialcounts-api.falchus.com/tiktok/user/" + this.vs2)
     ).done(([f], [g]) => {
       TT.query.begin(f, g);
       TT.updateManager.updateSubscribers(f.statistics.subs, g.statistics.subs);

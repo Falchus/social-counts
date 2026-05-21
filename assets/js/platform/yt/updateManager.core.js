@@ -1,6 +1,6 @@
 YT.updateManager = {
   prepare: function () {
-    ["#subs", "#views", "#videos"].forEach(function (e) {
+    ["#subs", "#views", "#videos"].forEach(e => {
       new Odometer({
         el: document.querySelector(e),
         value: "0",

@@ -1,6 +1,6 @@
 TT.updateManager = {
   prepare: function () {
-    ["#subs", "#likes", "#videos"].forEach(function (e) {
+    ["#subs", "#likes", "#videos"].forEach(e => {
       new Odometer({
         el: document.querySelector(e),
         value: "0",
