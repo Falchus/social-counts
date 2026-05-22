@@ -1,7 +1,7 @@
 YT.multisearch = {
   getResults: function (e) {
     $.getJSON(
-      "https://api.subscribercounter.nl/api/youtube-view-count/" + encodeURIComponent(e) + "/search", e => {
+      "https://socialcounts-api.falchus.com/youtube/video/" + encodeURIComponent(e), e => {
         let $er = $("#results");
         $er.html("");
         e.data.forEach(function (f) {
