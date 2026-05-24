@@ -1,5 +1,8 @@
 async function load(html) {
     document.currentScript.insertAdjacentHTML('afterend', await (await fetch('/social-counts/assets/partials/' + html + '.html')).text());
+    document.dispatchEvent(new CustomEvent('partial-load', {
+        detail: html
+    }));
 }
 
 window.Head = { load: () => load("head") };

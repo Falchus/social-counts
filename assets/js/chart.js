@@ -1,4 +1,6 @@
-$(function () {
+document.addEventListener('partial-load', function (e) {
+    if (e.detail !== "chart") return;
+
     const canvas = document.getElementById("chart");
     if (!canvas) return;
 
