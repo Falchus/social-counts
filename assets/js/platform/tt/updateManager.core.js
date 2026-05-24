@@ -27,5 +27,6 @@ TT.updateManager = {
   },
   updateChannelID: function (e) {
     TT.live.channelID = e;
+    ChartManager.reset();
   }
 };

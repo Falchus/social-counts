@@ -4,5 +4,6 @@ const YT = {};
 const TT = {};
 
 window.ChartManager = {
-    push: function (value) {}
+    push: function (value) {},
+    reset: function () {}
 }

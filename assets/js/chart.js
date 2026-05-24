@@ -46,26 +46,31 @@ document.addEventListener('partial-load', function (e) {
 
     let x = 0;
     let firstValue;
+    let data = chart.data.datasets[0].data;
 
     function push(value) {
         if (firstValue === undefined) {
             firstValue = value;
         }
 
-        const data = chart.data.datasets[0].data;
         data.push({
             x: x++,
             y: value - firstValue
         });
         if (data.length >= canvas.clientWidth) {
-            data.length = 0;
-            firstValue = undefined;
+            reset();
         }
 
         chart.update("none");
     }
 
+    function reset() {
+        data.length = 0;
+        firstValue = undefined;
+    }
+
     window.ChartManager = {
-        push
+        push,
+        reset
     };
 });
