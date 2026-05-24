@@ -44,7 +44,6 @@ $(function () {
 
     let x = 0;
     let firstValue;
-    let pending = false;
 
     function push(value) {
         if (firstValue === undefined) {
@@ -61,13 +60,7 @@ $(function () {
             firstValue = undefined;
         }
 
-        if (!pending) {
-            pending = true;
-            requestAnimationFrame(() => {
-                chart.update("none");
-                pending = false;
-            })
-        }
+        chart.update("none");
     }
 
     window.ChartManager = {
