@@ -5,7 +5,7 @@ YT.multisearch = {
         let $er = $("#results");
         $er.html("");
         e.data.forEach(function (f) {
-          if (f.id === YT.live.channelID) return;
+          if (f.id === YT.live.id) return;
           $er.append(this.giveHtml(f.name, f.picture, f.id));
         });
       },
@@ -47,8 +47,8 @@ YT.multisearch = {
     this.getResults($("#searchvalue_m").val());
   },
   launchCompare: function (e) {
-    if (e === YT.live.channelID) return;
-    window.open("/social-counts/compare/#!/" + YT.live.channelID + "$$" + e);
+    if (e === YT.live.id) return;
+    window.open("/social-counts/compare/#!/" + YT.live.id + "$$" + e);
     this.resetCompare();
   },
   bind: function () {

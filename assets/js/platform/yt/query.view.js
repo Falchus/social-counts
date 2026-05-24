@@ -1,6 +1,6 @@
 YT.query = {
   newSearch: function (e) {
-    if (e.trim() === YT.live.channelID || e.trim() === "") return;
+    if (e.trim() === YT.live.id || e.trim() === "") return;
 
     YT.live.stop();
     $.getJSON("https://socialcounts-api.falchus.com/youtube/video/" + encodeURIComponent(e), e => {
@@ -8,7 +8,7 @@ YT.query = {
         alert("No results found!");
         return;
       }
-      YT.updateManager.updateChannelID(e.id);
+      YT.updateManager.updateId(e.id);
       YT.updateManager.updateCover(e.picture);
       YT.updateManager.updateName(e.name);
       YT.updateManager.updateProfile(e.picture);

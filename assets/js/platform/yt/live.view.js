@@ -1,9 +1,9 @@
 YT.live = {
-  channelID: "",
+  id: "",
   update: function () {
-    $.getJSON("https://socialcounts-api.falchus.com/youtube/video/" + this.channelID, e => {
+    $.getJSON("https://socialcounts-api.falchus.com/youtube/video/" + this.id, e => {
       if (!e) {
-        YT.query.newSearch(this.channelID);
+        YT.query.newSearch(this.id);
         return;
       }
       YT.updateManager.updateViews(e.statistics.views);

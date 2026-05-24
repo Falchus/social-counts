@@ -5,7 +5,7 @@ TT.multisearch = {
         let $er = $("#results");
         $er.html("");
         e.data.forEach(function (f) {
-          if (f.id === TT.live.channelID) return;
+          if (f.id === TT.live.id) return;
           $er.append(this.giveHtml(f.name, f.picture, f.id));
         });
       },
@@ -47,8 +47,8 @@ TT.multisearch = {
     this.getResults($("#searchvalue_m").val());
   },
   launchCompare: function (e) {
-    if (e === TT.live.channelID) return;
-    window.open("/social-counts/tiktok/compare/#!/" + TT.live.channelID + "$$" + e);
+    if (e === TT.live.id) return;
+    window.open("/social-counts/tiktok/compare/#!/" + TT.live.id + "$$" + e);
     this.resetCompare();
   },
   bind: function () {

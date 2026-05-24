@@ -25,8 +25,8 @@ TT.updateManager = {
   updateVideos: function (e) {
     $("#videos").text(e);
   },
-  updateChannelID: function (e) {
-    TT.live.channelID = e;
+  updateId: function (e) {
+    TT.live.id = e;
     ChartManager.reset();
   }
 };

@@ -28,8 +28,8 @@ YT.updateManager = {
   updateVideos: function (e) {
     $("#videos").text(e);
   },
-  updateChannelID: function (e) {
-    YT.live.channelID = e;
+  updateId: function (e) {
+    YT.live.id = e;
     ChartManager.reset();
   }
 };

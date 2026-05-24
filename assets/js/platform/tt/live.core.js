@@ -1,9 +1,9 @@
 TT.live = {
-  channelID: "",
+  id: "",
   update: function () {
-    $.getJSON("https://socialcounts-api.falchus.com/tiktok/user/" + this.channelID, e => {
+    $.getJSON("https://socialcounts-api.falchus.com/tiktok/user/" + this.id, e => {
       if (!e) {
-        TT.query.newSearch(this.channelID);
+        TT.query.newSearch(this.id);
         return;
       }
       TT.updateManager.updateSubscribers(e.statistics.subs);

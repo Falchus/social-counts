@@ -5,7 +5,7 @@ YT.multisearch = {
         let $er = $("#results");
         $er.html("");
         e.data.forEach(function (f) {
-          if (f.id === YT.live.channelID) return;
+          if (f.id === YT.live.id) return;
           $er.append(this.giveHtml(f.name, f.picture, f.id));
         });
       },
@@ -22,8 +22,8 @@ YT.multisearch = {
     this.getResults($("#searchvalue_m").val());
   },
   launchCompare: function (e) {
-    if (e === YT.live.channelID) return;
-    window.open("https://counts.live/compare/youtube-view-count/" + YT.live.channelID + "/youtube-view-count/" + e);
+    if (e === YT.live.id) return;
+    window.open("https://counts.live/compare/youtube-view-count/" + YT.live.id + "/youtube-view-count/" + e);
     this.resetCompare();
   },
   bind: function () {

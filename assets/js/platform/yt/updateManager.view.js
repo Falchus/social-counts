@@ -31,8 +31,8 @@ YT.updateManager = {
   updateComments: function (e) {
     $("#comments").text(e);
   },
-  updateChannelID: function (e) {
-    YT.live.channelID = e;
+  updateId: function (e) {
+    YT.live.id = e;
     ChartManager.reset();
   }
 };
