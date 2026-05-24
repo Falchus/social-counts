@@ -379,7 +379,7 @@ footer {
   justify-content: space-between;
 }
 
-footer > div:last-child {
+footer > div:nth-last-child(-n + 2) {
   display: flex;
   gap: 0.5rem;
 }
