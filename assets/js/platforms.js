@@ -66,38 +66,6 @@
         "UCq-Fj5jknLsUf-MWSy4_brA"
       ]
     }),
-
-    tt: definePlatform("tt", {
-      ns: "TT",
-      api: "tiktok/user",
-      poll: 10000,
-      stats: [
-        {
-          id: "subs",
-          label: "Subscribers"
-        },
-        {
-          id: "likes",
-          label: "Likes"
-        },
-        {
-          id: "videos",
-          label: "Videos"
-        }
-      ],
-      ui: {
-        cover: true
-      },
-      defaults: [
-        "mrbeast",
-        "khaby.lame"
-      ],
-      compareDefaults: [
-        "khaby.lame",
-        "charlidamelio"
-      ]
-    }),
-
     "yt-video": definePlatform("yt-video", {
       ns: "YT",
       api: "youtube/video",
@@ -129,11 +97,44 @@
         profileClass: "views"
       },
       defaults: [
+        "dBxOYE2j55U",
         "9bZkp7q19f0",
-        "YQHsXMglC9A",
-        "60ItHLz5WEA",
-        "pk7ESz6vtyA",
-        "gwMa6gpoE9I"
+        "60ItHLz5WEA"
+      ],
+      compareDefaults: [
+        "XqZsoesa55w",
+        "kJQP7kiw5Fk"
+      ]
+    }),
+
+    tt: definePlatform("tt", {
+      ns: "TT",
+      api: "tiktok/user",
+      poll: 10000,
+      stats: [
+        {
+          id: "subs",
+          label: "Subscribers"
+        },
+        {
+          id: "likes",
+          label: "Likes"
+        },
+        {
+          id: "videos",
+          label: "Videos"
+        }
+      ],
+      ui: {
+        cover: true
+      },
+      defaults: [
+        "mrbeast",
+        "khaby.lame"
+      ],
+      compareDefaults: [
+        "khaby.lame",
+        "charlidamelio"
       ]
     })
   };
