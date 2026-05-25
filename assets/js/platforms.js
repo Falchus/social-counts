@@ -105,8 +105,7 @@
       stats: [
         {
           id: "views",
-          label: "Views",
-          extraClass: "views"
+          label: "Views"
         },
         {
           id: "likes",

@@ -86,10 +86,6 @@ h6 {
   font-size: 8rem;
 }
 
-.display-1.views {
-  font-size: 6rem;
-}
-
 .display-5 {
   font-size: 2.8rem;
   font-weight: 300;
@@ -823,10 +819,6 @@ sidebar navigation
 @media (max-width: 767px) {
   .display-1 {
     font-size: 4rem;
-  }
-
-  .display-1.views {
-    font-size: 3rem;
   }
 
   .topbar {
