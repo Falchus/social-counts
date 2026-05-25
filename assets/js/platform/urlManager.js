@@ -5,6 +5,7 @@ window.initUrlManager = function (ns) {
   if (App.compareMode) {
     ns.urls = {
       onchange() {
+        if (!cfg.compareDefaults) return;
         const { a, b } = parseCompareHash();
         if (a || b) {
           this.pushState(a || cfg.compareDefaults[0], b || cfg.compareDefaults[1]);

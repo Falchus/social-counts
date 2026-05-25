@@ -13,10 +13,6 @@ window.Layout = {
   applyH1Class(h1, size) {
     h1.classList.remove("display-1", "display-5");
     h1.classList.add(size);
-    const extra = h1.dataset.extraClass;
-    if (extra) {
-      extra.split(/\s+/).forEach(cls => cls && h1.classList.add(cls));
-    }
   },
 
   apply() {

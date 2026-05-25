@@ -23,7 +23,8 @@ window.initLive = function (ns) {
             return;
           }
           ns.query.begin(a, b);
-          ns.updateManager.updateSubscribers(a.statistics.subs, b.statistics.subs);
+          const stat = cfg.stats[0].id;
+          ns.updateManager.updateSubscribers(a.statistics[stat], b.statistics[stat]);
           this.scheduleNext(Math.max(a.update.next, b.update.next));
         }).fail(() => {
           this.scheduleNext(cfg.poll);

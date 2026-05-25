@@ -15,6 +15,7 @@
   }
 
   function definePlatform(key, config) {
+    const defaults = config.defaults || [];
     return {
       ns: config.ns || key.toUpperCase().replace(/[^a-z0-9]/gi, ""),
       api: config.api,
@@ -25,8 +26,11 @@
         cover: true,
         infoRow: false
       }, config.ui),
-      defaults: config.defaults || [],
-      compareDefaults: config.compareDefaults || null,
+      defaults: defaults,
+      compareDefaults: config.compareDefaults || (defaults.length >= 2 ? defaults.slice(0, 2) : null),
+      compareUrl(a, b) {
+        return PlatformRegistry.comparePageUrl(key, a, b);
+      },
       nameHtml: !!config.nameHtml
     };
   }
@@ -53,7 +57,6 @@
         info: "subs"
       },
       ui: {
-        cover: true,
         infoRow: true
       },
       defaults: [
@@ -125,9 +128,6 @@
           label: "Videos"
         }
       ],
-      ui: {
-        cover: true
-      },
       defaults: [
         "mrbeast",
         "khaby.lame"

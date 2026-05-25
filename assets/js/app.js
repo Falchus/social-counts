@@ -16,12 +16,11 @@ window.App = {
   buildPool(platform) {
     const pool = document.getElementById("pool");
     if (!pool) return;
-    pool.innerHTML = platform.stats.map(s => {
-      const extra = s.extraClass ? ' data-extra-class="' + s.extraClass + '"' : "";
-      return '<div class="item" data-key="' + s.id + '">' +
-          '<h1 id="' + s.id + '"' + extra + '>0</h1>' +
-          '<span class="label">' + s.label + '</span></' + 'div>';
-    }).join("");
+    pool.innerHTML = platform.stats.map(s =>
+      '<div class="item" data-key="' + s.id + '">' +
+      '<h1 id="' + s.id + '">0</h1>' +
+      '<span class="label">' + s.label + '</span></' + 'div>'
+    ).join("");
   },
 
   applyUi(platform) {
@@ -69,8 +68,8 @@ window.App = {
         layout: this.current.layout
       };
       this.buildPool(this.current);
-      this.applyUi(this.current);
     }
+    this.applyUi(this.current);
 
     for (const script of PLATFORM_SCRIPTS) {
       await this.loadScript(script);
