@@ -1,9 +1,11 @@
-const url = "https://gh.falchus.com/social-counts/";
-
-const YT = {};
-const TT = {};
+window.getNsObject = function (nsName) {
+  if (!window[nsName]) {
+    window[nsName] = {};
+  }
+  return window[nsName];
+};
 
 window.ChartManager = {
-    push: function (value) {},
-    reset: function () {}
-}
+  push: function (value) {},
+  reset: function () {}
+};

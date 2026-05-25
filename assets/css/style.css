@@ -816,6 +816,10 @@ sidebar navigation
   left: 0;
 }
 
+#secondary .card {
+  cursor: pointer;
+}
+
 @media (max-width: 767px) {
   .display-1 {
     font-size: 4rem;
@@ -871,10 +875,6 @@ sidebar navigation
 
   footer {
     left: 0;
-  }
-
-  #sharer .card-block {
-    padding: 1.25rem 0;
   }
 
   .vs-leader {

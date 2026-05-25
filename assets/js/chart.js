@@ -1,7 +1,8 @@
 document.addEventListener('partial-load', function (e) {
     if (e.detail !== "chart") return;
 
-    const canvas = document.getElementById("chart");
+    const section = document.getElementById("chart");
+    const canvas = section && section.querySelector("canvas");
     if (!canvas) return;
 
     const chart = new Chart(canvas, {
@@ -57,7 +58,8 @@ document.addEventListener('partial-load', function (e) {
             x: x++,
             y: value - firstValue
         });
-        if (data.length >= canvas.clientWidth) {
+        const width = canvas.clientWidth;
+        if (width > 0 && data.length >= width) {
             reset();
         }
 
@@ -67,6 +69,7 @@ document.addEventListener('partial-load', function (e) {
     function reset() {
         data.length = 0;
         firstValue = undefined;
+        x = 0;
     }
 
     window.ChartManager = {

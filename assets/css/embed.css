@@ -1,0 +1,58 @@
+html body {
+  overflow: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  color: black !important;
+}
+
+body.transparent {
+  background: transparent;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+#root > .container {
+  float: left;
+  overflow: hidden;
+}
+
+#root .image {
+  position: relative;
+  float: left;
+}
+
+.sec:not(.counter) {
+  position: relative;
+  font-weight: 100;
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+.sec:not(.counter) #name {
+  font-size: 16px;
+}
+
+.counter {
+  position: relative;
+}
+
+.counter h1 {
+  font-size: 38px;
+  margin: 0;
+  font-weight: 600;
+}
+
+[hidden] {
+  display: none;
+}
+
+#root .image img {
+  display: block;
+  margin: 0 auto;
+}
