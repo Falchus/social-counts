@@ -14,10 +14,6 @@
   const id = params.get("id") || hashData.id || "";
   const statParam = params.get("stat") || hashData.stat;
 
-  if (params.get("bg") === "transparent") {
-    document.body.classList.add("transparent");
-  }
-
   if (!config || !statEl) return;
 
   document.body.style.cursor = "pointer";

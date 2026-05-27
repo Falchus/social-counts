@@ -1,15 +1,8 @@
-html body {
-  overflow: hidden;
-}
-
 * {
   padding: 0;
   margin: 0;
+  background: transparent !important;
   color: black !important;
-}
-
-body.transparent {
-  background: transparent;
 }
 
 #root {
@@ -20,6 +13,7 @@ body.transparent {
 #root > .container {
   float: left;
   overflow: hidden;
+  padding: 0;
 }
 
 #root .image {
@@ -29,13 +23,11 @@ body.transparent {
 
 .sec:not(.counter) {
   position: relative;
-  font-weight: 100;
-  font-size: 22px;
   margin-top: 5px;
 }
 
 .sec:not(.counter) #name {
-  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .counter {
@@ -43,16 +35,9 @@ body.transparent {
 }
 
 .counter h1 {
-  font-size: 38px;
-  margin: 0;
   font-weight: 600;
 }
 
 [hidden] {
   display: none;
-}
-
-#root .image img {
-  display: block;
-  margin: 0 auto;
 }
