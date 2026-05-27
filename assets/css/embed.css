@@ -13,7 +13,6 @@
 #root > .container {
   float: left;
   overflow: hidden;
-  padding: 0;
 }
 
 #root .image {
