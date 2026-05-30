@@ -8,12 +8,9 @@ window.initUpdateManager = function (ns) {
         ["#subs_vs1", "#subs_vs2", "#diff"].forEach(sel => {
           const el = document.querySelector(sel);
           if (!el) return;
-          new Odometer({
-            el: el,
-            value: 0,
-            format: "(,ddd)",
-            theme: "minimal"
-          });
+          new Odometer(Object.assign({
+            el: el
+          }, ODOMETER));
         });
       },
       updateName(a, b) {
@@ -52,12 +49,9 @@ window.initUpdateManager = function (ns) {
       stats.forEach(stat => {
         const el = document.querySelector("#" + stat);
         if (!el) return;
-        this.odometers[stat] = new Odometer({
-          el: el,
-          value: 0,
-          format: "(,ddd)",
-          theme: "minimal"
-        });
+        this.odometers[stat] = new Odometer(Object.assign({
+          el: el
+        }, ODOMETER));
       });
     },
     updateName(name) {

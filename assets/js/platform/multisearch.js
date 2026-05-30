@@ -6,7 +6,7 @@ window.initMultisearch = function (ns) {
   ns.multisearch = {
     getResults(term) {
       const self = this;
-      $.getJSON("https://socialcounts-api.falchus.com/" + searchApi + "/" + encodeURIComponent(term), res => {
+      $.getJSON(API + searchApi + "/" + encodeURIComponent(term), res => {
         const $er = $("#results").html("");
         if (!res || !res.data) return;
         res.data.forEach(item => {
@@ -21,25 +21,36 @@ window.initMultisearch = function (ns) {
     },
     giveHtml(name, image, id) {
       const self = this;
-      const $row = $("<div>", { class: "d-flex flex-row" });
+      const $row = $("<div>", {
+        class: "d-flex flex-row"
+      });
       $row.append(
         $("<div>", {
           class: "round align-self-center",
           style: "background: url('" + image + "'); background-size: cover;"
         }),
-        $("<div>", { class: "m-l-10 align-self-center" }).append(
-          $("<h3>", { class: "m-b-0 font-light" }).text(name)
+        $("<div>", {
+          class: "m-l-10 align-self-center"
+        }).append(
+          $("<h3>", {
+            class: "m-b-0 font-light"
+          }).text(name)
         )
       );
-      return $("<div>", { class: "card-block card m-b-15" })
+      return $("<div>", {
+        class: "card-block card m-b-15"
+      })
         .append($row)
         .on("click", () => {
-          if (App.compareMode) self.swapChannel(id);
-          else self.launchCompare(id);
+          if (App.compareMode) {
+            self.swapChannel(id);
+          } else {
+            self.launchCompare(id);
+          }
         });
     },
     resetCompare() {
-      $(".super-search").fadeOut("400", function () {
+      $(".super-search").fadeOut("400", () => {
         $("#results").html("");
         $("#searchvalue_m").val("");
       });

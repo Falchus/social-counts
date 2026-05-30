@@ -18,8 +18,9 @@ window.App = {
     if (!pool) return;
     pool.innerHTML = platform.stats.map(s =>
       '<div class="item" data-key="' + s.id + '">' +
-      '<h1 id="' + s.id + '">0</h1>' +
-      '<span class="label">' + s.label + '</span></' + 'div>'
+        '<h1 id="' + s.id + '">0</h1>' +
+        '<span class="label">' + s.label + '</span>' +
+      '</div>'
     ).join("");
   },
 

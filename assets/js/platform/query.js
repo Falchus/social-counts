@@ -22,7 +22,7 @@ window.initQuery = function (ns) {
       if (query === ns.live.id || query === "") return;
 
       ns.live.stop();
-      $.getJSON("https://socialcounts-api.falchus.com/" + cfg.api + "/" + encodeURIComponent(query), data => {
+      $.getJSON(API + cfg.api + "/" + encodeURIComponent(query), data => {
         if (!data) {
           alert("No results found!");
           return;

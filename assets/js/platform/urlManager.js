@@ -6,7 +6,10 @@ window.initUrlManager = function (ns) {
     ns.urls = {
       onchange() {
         if (!cfg.compareDefaults) return;
-        const { a, b } = parseCompareHash();
+        const {
+          a,
+          b
+        } = parseCompareHash();
         if (a || b) {
           this.pushState(a || cfg.compareDefaults[0], b || cfg.compareDefaults[1]);
         } else {
@@ -23,7 +26,9 @@ window.initUrlManager = function (ns) {
 
   ns.urls = {
     onchange() {
-      const { id } = parseHash();
+      const {
+        id
+      } = parseHash();
       if (id) {
         ns.query.newSearch(id);
       } else {

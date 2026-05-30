@@ -15,8 +15,8 @@ window.initLive = function (ns) {
       update() {
         if (!this.vs1 || !this.vs2) return;
         $.when(
-          $.getJSON("https://socialcounts-api.falchus.com/" + cfg.api + "/" + encodeURIComponent(this.vs1)),
-          $.getJSON("https://socialcounts-api.falchus.com/" + cfg.api + "/" + encodeURIComponent(this.vs2))
+          $.getJSON(API + cfg.api + "/" + encodeURIComponent(this.vs1)),
+          $.getJSON(API + cfg.api + "/" + encodeURIComponent(this.vs2))
         ).done(([a], [b]) => {
           if (!a || !b) {
             this.scheduleNext(cfg.poll);
@@ -26,9 +26,7 @@ window.initLive = function (ns) {
           const stat = cfg.stats[0].id;
           ns.updateManager.updateSubscribers(a.statistics[stat], b.statistics[stat]);
           this.scheduleNext(Math.max(a.update.next, b.update.next));
-        }).fail(() => {
-          this.scheduleNext(cfg.poll);
-        });
+        }).fail(() => this.scheduleNext(cfg.poll));
       },
       setVS(a, b) {
         this.vs1 = a;
@@ -55,7 +53,7 @@ window.initLive = function (ns) {
     nextUpdate: cfg.poll,
     update() {
       if (!this.id) return;
-      $.getJSON("https://socialcounts-api.falchus.com/" + cfg.api + "/" + encodeURIComponent(this.id), data => {
+      $.getJSON(API + cfg.api + "/" + encodeURIComponent(this.id), data => {
         if (!data) {
           this.nextUpdate = cfg.poll;
         } else {

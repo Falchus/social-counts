@@ -19,5 +19,8 @@ window.parseCompareHash = function () {
   const q = raw.indexOf("?");
   if (q !== -1) raw = raw.slice(0, q);
   const parts = raw.split("$$");
-  return { a: parts[0] || "", b: parts[1] || "" };
+  return {
+    a: parts[0] || "",
+    b: parts[1] || ""
+  };
 };

@@ -1,6 +1,4 @@
 (function () {
-  const API = "https://socialcounts-api.falchus.com/";
-
   const params = new URLSearchParams(location.search);
   const hashData = parseHash();
   const type = params.get("type") || "user";
@@ -21,12 +19,9 @@
   const stat = statParam && config.layout.stats[statParam] ? statParam : config.layout.default;
   statEl.id = stat;
 
-  const odometer = new Odometer({
-    el: statEl,
-    value: 0,
-    format: "(,ddd)",
-    theme: "minimal"
-  });
+  const odometer = new Odometer(Object.assign({
+    el: statEl
+  }, ODOMETER));
 
   let nextPoll = config.poll;
 
@@ -59,7 +54,7 @@
   function poll() {
     if (!id) return;
     $.getJSON(API + config.api + "/" + encodeURIComponent(id))
-      .done(function (data) {
+      .done(data => {
         if (!data) {
           nextPoll = config.poll;
           setTimeout(poll, nextPoll);
@@ -71,7 +66,7 @@
         }
         nextPoll = (data.update && data.update.next) || config.poll;
         setTimeout(poll, nextPoll);
-      }).fail(function () {
+      }).fail(() => {
         nextPoll = config.poll;
         setTimeout(poll, nextPoll);
       });

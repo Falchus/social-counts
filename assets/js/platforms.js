@@ -6,7 +6,10 @@
   };
 
   function buildLayout(stats, overrides) {
-    const statMap = Object.fromEntries(stats.map(s => [s.id, s.label]));
+    const statMap = Object.fromEntries(stats.map(s => [
+      s.id,
+      s.label
+    ]));
     return Object.assign({
       default: stats[0].id,
       stats: statMap,

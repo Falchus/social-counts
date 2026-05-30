@@ -4,7 +4,9 @@ window.Layout = {
 
   init(config) {
     this.config = config;
-    const { stat } = parseHash();
+    const {
+      stat
+    } = parseHash();
     this.active = stat && config.stats[stat] ? stat : config.default;
     this.apply();
     this.bindClicks();
@@ -97,7 +99,9 @@ window.Layout = {
   set(key) {
     if (!this.config.stats[key] || key === this.active) return;
     this.active = key;
-    const { id } = parseHash();
+    const {
+      id
+    } = parseHash();
     history.replaceState(null, null, buildUrl(id));
     this.apply();
     this.bindClicks();

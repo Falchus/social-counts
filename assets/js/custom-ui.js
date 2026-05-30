@@ -1,6 +1,6 @@
 $(function () {
   "use strict";
-  const set = function () {
+  function set() {
     const width = window.innerWidth > 0 ? window.innerWidth : this.screen.width;
     const topOffset = 70;
     if (width < 1170) {
@@ -19,18 +19,18 @@ $(function () {
     if (height > topOffset) {
       $(".page-wrapper").css("min-height", height + "px");
     }
-  };
+  }
   $(window).ready(set);
   $(window).on("resize", set);
 
   $(".fix-header .topbar").stick_in_parent({});
 
-  $(".nav-toggler").click(function () {
+  $(".nav-toggler").click(() => {
     $("body").toggleClass("show-sidebar");
     $(".nav-toggler i").toggleClass("ti-menu");
     $(".nav-toggler i").addClass("ti-close");
   });
-  $("a[href^='#']").on("click", function (e) {
+  $("a[href^='#']").on("click", e => {
     e.preventDefault();
     $("html, body").animate(
       {
