@@ -10,7 +10,7 @@ $(function () {
         if (lastIds?.length === ids.length && ids.every((id, i) => id === lastIds[i])) return;
         lastIds = ids;
 
-        ids.forEach(id => {
+        ids.forEach((id, i) => {
           let card = grid.querySelector('[data-id="' + id + '"]');
           if (!card) {
             card = document.createElement("div");
@@ -21,7 +21,9 @@ $(function () {
             iframe.loading = "lazy";
             card.appendChild(iframe);
           }
-          grid.appendChild(card);
+          if (grid.children[i] !== card) {
+            grid.insertBefore(card, grid.children[i]);
+          }
         });
 
         grid.querySelectorAll(".card[data-id]").forEach(card => {
