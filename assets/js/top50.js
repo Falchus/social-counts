@@ -1,9 +1,14 @@
 $(function () {
+  let lastIds;
+
   function load() {
     const grid = document.getElementById("secondary");
     $.getJSON(API + "youtube/user/top/50")
         .done(ids => {
           if (!grid || !Array.isArray(ids)) return;
+
+          if (lastIds?.length === ids.length && ids.every((id, i) => id === lastIds[i])) return;
+          lastIds = ids;
 
           ids.forEach(id => {
             let card = grid.querySelector('[data-id="' + id + '"]');
