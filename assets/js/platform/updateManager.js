@@ -69,7 +69,7 @@ window.initUpdateManager = function (ns) {
     setStat(stat, val) {
       const odometer = this.odometers[stat];
       if (odometer) {
-        odometer.update(val);
+        updateOdometer(odometer, val);
       } else {
         $("#" + stat).text(val);
       }

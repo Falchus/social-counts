@@ -62,7 +62,7 @@
         }
         applyMeta(data);
         if (data.statistics && data.statistics[stat] != null) {
-          odometer.update(data.statistics[stat]);
+          updateOdometer(odometer, data.statistics[stat]);
         }
         nextPoll = (data.update && data.update.next) || config.poll;
         setTimeout(poll, nextPoll);
