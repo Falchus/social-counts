@@ -16,12 +16,15 @@ $(function () {
             card = document.createElement("div");
             card.className = "card m-b-0 position-relative";
             card.dataset.id = id;
+            const rank = document.createElement("span");
+            rank.className = "rank";
             const iframe = document.createElement("iframe");
             iframe.src = "/social-counts/embed/?id=" + encodeURIComponent(id);
             iframe.loading = "lazy";
-            card.appendChild(iframe);
+            card.append(rank, iframe);
           }
           if (grid.children[i] !== card) {
+            card.querySelector(".rank").textContent = i + 1;
             grid.insertBefore(card, grid.children[i]);
           }
         });

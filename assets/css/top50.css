@@ -16,17 +16,14 @@ body {
   grid: repeat(10, minmax(0, 1fr)) / repeat(5, 1fr);
   grid-auto-flow: column;
   gap: 0.35rem;
-  counter-reset: rank;
 }
 
 #secondary > .card {
   position: relative;
   container-type: size;
-  counter-increment: rank;
 }
 
-#secondary > .card::before {
-  content: counter(rank);
+#secondary > .card > .rank {
   position: absolute;
   inset: 0 auto 0 0;
   width: 4ch;
