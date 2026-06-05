@@ -35,8 +35,7 @@ body {
 
 #secondary iframe {
   position: absolute;
-  inset: 0;
-  left: 4ch;
+  inset: 5px 0 5px calc(4ch + 5px);
   border: 0;
-  zoom: calc(100cqh / 80px);
+  zoom: calc((100cqh - 10px) / 80px);
 }
